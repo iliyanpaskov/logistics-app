@@ -1,0 +1,18 @@
+.services-wrapper {
+    text-align: center;
+}
+
+.services-title {
+    text-transform: capitalize;
+    color: #FF4800;
+    font-size: 43px;
+    font-weight: 700;
+    margin-top: 100px;
+}
+
+.services-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

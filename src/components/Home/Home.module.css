@@ -1,0 +1,60 @@
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 20px auto ;
+}
+
+
+.our-moto-title {
+    color: #FF4800;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    margin-top: 80px;
+}
+
+.our-moto-content {
+    display: flex;
+    background: #F2F2F4;
+}
+
+.our-moto-content-text {
+    margin: 0;
+    padding: 25px 40px;
+    line-height: 1.7rem;
+    font-size: 18px;
+    text-align: center;
+}
+
+.our-moto img {
+    width: 800px;
+    padding: 10px;
+}
+
+.services-short-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.services-short-list-wrapper {
+    margin: 100px auto;
+}
+
+.services-short-list-title {
+    font-weight: 800;
+    text-transform: capitalize;
+    color: #FF4800;
+    font-size: 40px;
+    margin: 30px 0 70px 0;
+    text-align: center;
+}
+
+.services-short-list-title span {
+    font-weight: 900;
+    text-decoration: underline;
+    color: #ffd000;
+}

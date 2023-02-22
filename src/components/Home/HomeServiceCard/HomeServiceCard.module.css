@@ -1,0 +1,47 @@
+.services-short-list-item {
+    background: linear-gradient(180deg, rgba(255, 72, 0, 1) 0%, rgba(255, 145, 0, 1) 50%, rgba(232, 255, 0, 1) 100%);
+    width: 300px;
+    border-radius: 20px;
+    list-style: none;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+.services-short-list-item-icon img {
+    width: 80%;
+    margin: 25px;
+}
+
+.services-short-list-item-btn,
+.services-short-list-item-title {
+    color: white;
+    text-transform: capitalize;
+}
+
+.services-short-list-item-title {
+    font-size: 23px;
+    font-weight: 700;
+    text-shadow: 1px 1px 6px black;
+}
+
+.services-short-list-item-btn {
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    background: #ff4800;
+    padding: 5px 30px;
+    border-radius: 15px;
+    text-shadow: 1px 1px 6px black;
+}
+
+.services-short-list-item-btn:hover {
+    background: rgb(47, 255, 47);
+    box-shadow: 0px 0px 5px 1px green;
+}
