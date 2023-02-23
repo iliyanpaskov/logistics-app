@@ -6,7 +6,9 @@
     min-height: 250px;
 }
 
-.services-title {
+.services-title,
+.services-list-title,
+.services-price-title {
     text-transform: capitalize;
     color: #FF4800;
     font-size: 43px;
@@ -14,9 +16,23 @@
     margin-top: 100px;
 }
 
+.services-title {
+    text-decoration: underline;
+}
+
 .services-list {
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+.services-price-list {
+    padding: 0;
+    min-height: 300px;
+    display: grid;
+    justify-items: center;
+    gap: 3rem;
+    grid-template-columns: repeat(3 , 1fr);
 }

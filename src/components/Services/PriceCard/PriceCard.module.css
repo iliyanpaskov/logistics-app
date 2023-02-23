@@ -1,0 +1,59 @@
+.price-card {
+    background: #F2F2F4;
+    text-align: center;
+    width: 400px;
+    margin: 10px;
+    text-transform: capitalize;
+}
+
+.price-card-service {
+    padding: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.price-wrapper {
+    position: relative;
+    color: white;
+}
+
+
+.price {
+    background: #FF4800;
+    font-size: 44px;
+    font-weight: 800;
+    padding: 27px;
+    margin: 0;
+}
+
+.price-period {
+    padding: 25px;
+    margin: 0;
+}
+
+.price-clients {
+    font-weight: 600;
+    background: #FF4800;
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+.price-card-btn {
+    display: block;
+    width: 150px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px auto;
+    background: greenyellow;
+    border: 1px solid rgb(143, 248, 143);
+    border-radius: 10px;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.price-card-btn:hover {
+    background: #FF4800;
+}
