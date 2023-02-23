@@ -37,6 +37,12 @@
 
 .footer-list-item-text {
     margin: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-list-item-text:hover {
+    text-decoration: underline;
 }
 
 .footer-list-text {

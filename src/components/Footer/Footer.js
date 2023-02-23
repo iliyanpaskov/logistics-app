@@ -1,4 +1,5 @@
 // import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import style from "../Footer/Footer.module.css"
 
 const Footer = () => {
@@ -31,23 +32,19 @@ const Footer = () => {
                     <h3 className={style["footer-list-title"]}> quick links</h3>
                     <li className={style["footer-list-item"]}>
                         <i className="fa-solid fa-chevron-right"></i>
-                        <p className={style["footer-list-item-text"]}>Home</p>
+                        <Link className={style["footer-list-item-text"]} to="/">Home</Link>
                     </li>
                     <li className={style["footer-list-item"]}>
                         <i className="fa-solid fa-chevron-right"></i>
-                        <p className={style["footer-list-item-text"]}>About</p>
+                        <Link className={style["footer-list-item-text"]} to="/about">About</Link>
                     </li>
                     <li className={style["footer-list-item"]}>
                         <i className="fa-solid fa-chevron-right"></i>
-                        <p className={style["footer-list-item-text"]}>Services</p>
+                        <Link className={style["footer-list-item-text"]} to="/services">Services</Link>
                     </li>
                     <li className={style["footer-list-item"]}>
                         <i className="fa-solid fa-chevron-right"></i>
-                        <p className={style["footer-list-item-text"]}>Contacts</p>
-                    </li>
-                    <li className={style["footer-list-item"]}>
-                        <i className="fa-solid fa-chevron-right"></i>
-                        <p className={style["footer-list-item-text"]}>Price</p>
+                        <Link className={style["footer-list-item-text"]} to="/contacts">Contacts</Link>
                     </li>
                 </ul>
 

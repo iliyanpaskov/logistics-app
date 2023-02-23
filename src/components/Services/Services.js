@@ -8,13 +8,12 @@ import style from "./Services.module.css"
 const Services = () => {
     const [state, setState] = useState([]);
 
-    useEffect(() => {
-        const response = async () => {
-            let result = await guestServices.getData('services');
-            setState(Object.values(result));
-        }
-        response();
-        // console.log(state[0][0].price);
+    useEffect(() => {            
+            const response = async () => {
+                let result = await guestServices.getData('services');
+                setState(Object.values(result));
+            }
+            response();
     }, []);
 
     return (
