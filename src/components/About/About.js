@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import Loading from "../Loading/Loading.js";
 import * as guestServices from "../../services/guestServices.js"
 
 import style from "./About.module.css"
@@ -9,11 +10,11 @@ const About = () => {
     const [state, setState] = useState([]);
     
     useEffect (()=> {
-        const res = async () => {
-            let result = await guestServices.getData("team");
-            setState(Object.values(result))
-        }
-        res();
+            const res = async () => {
+                let result = await guestServices.getData("team");
+                setState(Object.values(result))
+            }
+            res();
     },[]);
 
     return (
@@ -47,7 +48,7 @@ const About = () => {
 
             <h1 className={style["about-team-title"]}>Meet Our Logistic Team</h1>
             <section className={style["about-team"]}>
-               {state[0]?.map(x => <AboutCard key={x.objectId} person={x}/>)}
+               {state[0] ? state[0].map(x => <AboutCard key={x.objectId} person={x}/>) : <Loading/>}
             </section>
         </section>
     );

@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.services-list-wrapper {
+    min-height: 250px;
+}
+
 .services-title {
     text-transform: capitalize;
     color: #FF4800;
