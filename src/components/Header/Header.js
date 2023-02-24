@@ -21,7 +21,7 @@ const Header = () => {
                             <NavLink to="/about" >About</NavLink>
                         </li>
                         <li className={style["header-navigation-list-item"]}>
-                            <NavLink to="services" >Services</NavLink>
+                            <NavLink to="/services" >Services</NavLink>
                         </li>
                         <li className={style["header-navigation-list-item"]}>
                             <NavLink to="/contacts" >Contacts</NavLink>

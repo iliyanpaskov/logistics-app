@@ -1,0 +1,18 @@
+.error-section {
+    background: #1F1F2E;
+    height: 400px;
+    position: relative;
+}
+
+.error-title {
+    margin: 0;
+    color: #FF4800;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    font-size: 65px;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: 1px 2px 5px yellow;
+}

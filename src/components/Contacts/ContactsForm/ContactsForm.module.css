@@ -45,3 +45,10 @@
             rgba(255, 145, 0, 1) 50%, rgba(232, 255, 0, 1) 100%);
     color: gray;
 }
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}

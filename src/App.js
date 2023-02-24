@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
 import Services from "./components/Services/Services";
 import Contacts from "./components/Contacts/Contacts";
+import Error from "./components/Error/Error";
 
 import './App.css'
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
       </main>
       <Footer />
