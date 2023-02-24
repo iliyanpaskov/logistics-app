@@ -1,11 +1,11 @@
 
-const baseUrl = "https://parseapi.back4app.com/classes";
-
+const baseUrl = `${process.env.REACT_APP_CLASSES_URL}`;
+console.log(baseUrl);
 const getSettings = {
     method: "GET",
     headers: {
-        "X-Parse-Application-Id" : "mmiJjV5bLwaTJXMktq7zHjB637Ml1maDGfmdTiuZ",
-        "X-Parse-REST-API-Key": "rlKrIGD7HJ5bJOJ5KPOlObKogSzKz5J2EU7z3nZe",
+        "X-Parse-Application-Id" : `${process.env.REACT_APP_APPLICATION_ID}`,
+        "X-Parse-REST-API-Key": `${process.env.REACT_APP_API_KEY}`,
     }
 }
 
