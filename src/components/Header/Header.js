@@ -47,7 +47,7 @@ const Header = () => {
                             <Link to="" >Register</Link>
                         </li>
                         <li className={`${style["header-navigation-user-list-item"]} ${style["get-a-quote"]}`}>
-                            <Link to="" >Get A Quote</Link>
+                            <Link to="/contacts" >Get A Quote</Link>
                         </li>
                     </ul>
                 </article>

@@ -1,6 +1,6 @@
 
 const baseUrl = `${process.env.REACT_APP_CLASSES_URL}`;
-console.log(baseUrl);
+
 const getSettings = {
     method: "GET",
     headers: {

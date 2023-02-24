@@ -14,21 +14,42 @@
 .contacts-phone-wrapper {
     display: flex;
     align-items: center;
-    padding: 22px;
+    padding: 20px;
 }
 
 .contacts-phone-wrapper i {
     font-size: 30px;
+    border: 5px solid white ;
+    border-radius: 50%;
+    padding: 9px;
 }
 
 
 .contacts-phone-number {
     margin: 10px 0 10px 20px;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
+    text-decoration: underline;
 }
 
 .contacts-phone img {
     width: 100%;
+    object-fit: cover;
 }
 
+.contacts-form-wrapper {
+    width: 50%;
+}
+
+.contacts-form-pre-title {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FF4800;
+}
+
+.contacts-form-title {
+    font-size: 30px;
+    font-weight: 600;
+}
