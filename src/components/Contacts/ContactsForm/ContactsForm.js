@@ -1,5 +1,7 @@
-import style from "./ContactsForm.module.css";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
+import { sendMessage } from "../../../services/guestServices.js";
+import style from "./ContactsForm.module.css";
 
 const ContactsForm = () => {
 
@@ -36,6 +38,8 @@ const ContactsForm = () => {
         return errors;
     }
 
+    const navigate = useNavigate()
+
     const formik = useFormik({
         initialValues: {
             customerName: '',
@@ -46,8 +50,12 @@ const ContactsForm = () => {
         },
         validate,
         onSubmit: values => {
-            // put to messages
-            alert(JSON.stringify(values, null, 2))
+            const responce = async () => {
+                let result = await sendMessage(values);
+                return result;
+            }
+            responce();
+            navigate("/");
         }
     })
 
