@@ -29,7 +29,7 @@ const Home = ({services}) => {
             <article className={style["services-short-list-wrapper"]}>
                 <h1 className={style["services-short-list-title"]}>we have <span>fast & quality</span>  services</h1>
                 <ul className={style["services-short-list"]}>
-                    {services[0] ? services[0].map(x => <HomeServiceCard key={x.objectId} logService={x} />) : <Loading/>}
+                    {services[0] ? services[0].map(x => <HomeServiceCard key={x.objectId} service={x} />) : <Loading/>}
                 </ul>
             </article>
         </section>
