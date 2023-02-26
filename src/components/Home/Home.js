@@ -1,20 +1,8 @@
-import { useState, useEffect } from "react";
 import HomeServiceCard from "./HomeServiceCard/HomeServiceCard.js";
 import Loading from "../Loading/Loading.js";
-import * as guestSeervices from "../../services/guestServices.js"
 import style from "../Home/Home.module.css"
 
-const Home = () => {
-    const [state, setState] = useState([]);
-
-    
-    useEffect(() => {
-            const response = async () => {
-                let result = await guestSeervices.getData("services");
-                setState(Object.values(result));
-            }
-            response();
-        }, []);
+const Home = ({services}) => {
 
     return (
         <section className={style["home-wrapper"]}>
@@ -41,9 +29,8 @@ const Home = () => {
             <article className={style["services-short-list-wrapper"]}>
                 <h1 className={style["services-short-list-title"]}>we have <span>fast & quality</span>  services</h1>
                 <ul className={style["services-short-list"]}>
-                    {state[0] ? state[0].map(x => <HomeServiceCard key={x.objectId} logService={x} />) : <Loading/>}
+                    {services[0] ? services[0].map(x => <HomeServiceCard key={x.objectId} logService={x} />) : <Loading/>}
                 </ul>
-
             </article>
         </section>
     );

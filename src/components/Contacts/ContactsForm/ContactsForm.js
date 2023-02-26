@@ -4,7 +4,6 @@ import { sendMessage } from "../../../services/guestServices.js";
 import style from "./ContactsForm.module.css";
 
 const ContactsForm = () => {
-
     const validate = values => {
         const errors = {};
 
@@ -55,6 +54,7 @@ const ContactsForm = () => {
                 return result;
             }
             responce();
+            alert("Your message was sent successfully!")
             navigate("/");
         }
     })

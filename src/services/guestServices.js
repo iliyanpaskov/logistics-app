@@ -14,7 +14,7 @@ export async function getData(classesName) {
         const result = await res.json();
         return result;
     } catch (error) {
-        console.log(error);
+        throw error;
     }
 }
 
@@ -32,7 +32,6 @@ export async function sendMessage(values) {
         });
         const data = await res.json();
         if (res.status === 201) {
-            console.log(data);
             return data;
         } else {
             console.log(data.message);

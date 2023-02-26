@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import style from "./Header.module.css"
 
@@ -15,16 +15,16 @@ const Header = () => {
                 <nav className={style["header-navigation"]}>
                     <ul className={style["header-navigation-list"]}>
                         <li className={style["header-navigation-list-item"]}>
-                            <NavLink to="/" >Home</NavLink>
+                            <Link to="/" >Home</Link>
                         </li>
                         <li className={style["header-navigation-list-item"]}>
-                            <NavLink to="/about" >About</NavLink>
+                            <Link to="/about" >About</Link>
                         </li>
                         <li className={style["header-navigation-list-item"]}>
-                            <NavLink to="/services" >Services</NavLink>
+                            <Link to="/services" >Services & Price</Link>
                         </li>
                         <li className={style["header-navigation-list-item"]}>
-                            <NavLink to="/contacts" >Contacts</NavLink>
+                            <Link to="/contacts" >Contacts</Link>
                         </li>
                     </ul>
                 </nav>
