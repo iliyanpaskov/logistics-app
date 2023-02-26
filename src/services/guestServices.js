@@ -18,6 +18,17 @@ export async function getData(classesName) {
     }
 }
 
+export async function getOneService(className,objectId) {
+    try {
+        const res = await fetch(`${baseUrl}/${className}/${objectId}`, getSettings);
+        const result = await res.json();
+
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
+
 
 export async function sendMessage(values) {
     try {
