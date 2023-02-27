@@ -8,15 +8,6 @@ const getSettings = {
     }
 }
 
-export async function getData(classesName) {
-    try {
-        const res = await fetch(`${baseUrl}/${classesName}`, getSettings);
-        const result = await res.json();
-        return result;
-    } catch (error) {
-        throw error;
-    }
-}
 
 export async function getOne(className,objectId) {
     try {

@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useClassesFetch } from "../../hooks/useClassesFetch.js";
 import Loading from "../Loading/Loading.js";
-import * as guestServices from "../../services/guestServices.js"
-
 import style from "./About.module.css"
 import AboutCard from "./AboutCard/AboutCard.js";
 
 const About = () => {
-    const [state, setState] = useState([]);
-    
-    useEffect (()=> {
-            const res = async () => {
-                let result = await guestServices.getData("team");
-                setState(Object.values(result))
-            }
-            res();
-    },[]);
+
+    const [team, isLoaded] = useClassesFetch('team', 'GET')
 
     return (
         <section className={style["about-wrapper"]}>
@@ -49,7 +39,11 @@ const About = () => {
 
             <h1 className={style["about-team-title"]}>Meet Our Logistic Team</h1>
             <section className={style["about-team"]}>
-               {state[0] ? state[0].map(x => <AboutCard key={x.objectId} person={x}/>) : <Loading/>}
+                {
+                    isLoaded
+                        ? team[0].map(x => <AboutCard key={x.objectId} person={x} />)
+                        : <Loading />
+                }
             </section>
         </section>
     );

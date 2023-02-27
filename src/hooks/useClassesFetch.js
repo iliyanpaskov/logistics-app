@@ -20,7 +20,7 @@ export const useClassesFetch = (classeName, method) => {
         .catch(error => {
             throw error
         } )
-    }, [classeName]);
+    }, [classeName,method]);
     return [data , isLoaded];
 }
 
