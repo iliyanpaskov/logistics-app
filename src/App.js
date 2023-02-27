@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-
+import { AuthenticationContext } from "./context/AuthenticationContext";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -15,22 +15,24 @@ import './App.css'
 
 function App() {
     return (
-        <div className="app">
-            <Header />
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/services/:objectId" element={<ServiceDetails />} />
-                    <Route path="/contacts" element={<Contacts />} />
-                    <Route path="/signup" element={<SignUp />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/*" element={<Error />} />
-                </Routes>
-            </main>
-            <Footer />
-        </div>
+        <AuthenticationContext>
+            <div className="app">
+                <Header />
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/services/:objectId" element={<ServiceDetails />} />
+                        <Route path="/contacts" element={<Contacts />} />
+                        <Route path="/signup" element={<SignUp />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/*" element={<Error />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
+        </AuthenticationContext>
     );
 }
 

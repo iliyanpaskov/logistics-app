@@ -1,5 +1,5 @@
-import ServicesCard from "./ServicesCard/ServicesCard";
-import PriceCard from "./PriceCard/PriceCard";
+import ServicesCard from "../ServicesCard/ServicesCard";
+import PriceCard from "../PriceCard/PriceCard";
 import Loading from "../Loading/Loading";
 import style from "./Services.module.css"
 import { useClassesFetch } from "../../hooks/useClassesFetch";

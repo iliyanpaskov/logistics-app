@@ -63,7 +63,7 @@
     text-decoration: none;
 }
 
-@keyframes border-pulsate {
+@keyframes border-puls {
     0% {
         border-color: rgba(255, 72, 0, 1);
     }
@@ -83,7 +83,7 @@
     padding: 21px;
     border-radius: 50%;
     border: 10px solid #FF4800;
-    animation: border-pulsate 2s infinite;
+    animation: border-puls 2s infinite;
 }
 
 .play-btn-text {

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useClassesFetch } from "../../hooks/useClassesFetch.js";
 import Loading from "../Loading/Loading.js";
+import AboutCard from "../AboutCard/AboutCard.js";
 import style from "./About.module.css"
-import AboutCard from "./AboutCard/AboutCard.js";
 
 const About = () => {
 
