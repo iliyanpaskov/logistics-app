@@ -17,6 +17,9 @@ export const useClassesFetch = (classeName, method) => {
             setIsLoaded(true)
             setData(Object.values(result));
         })
+        .catch(error => {
+            throw error
+        } )
     }, [classeName]);
     return [data , isLoaded];
 }
