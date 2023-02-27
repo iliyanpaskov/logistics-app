@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-export const useFetchClasses = (classeName, method) => {
+export const useClassesFetch = (classeName, method) => {
     const [data, setData] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_CLASSES_URL}/${classeName}`, {
@@ -11,11 +12,12 @@ export const useFetchClasses = (classeName, method) => {
                 "X-Parse-REST-API-Key": `${process.env.REACT_APP_API_KEY}`,
             },
         })
-            .then(response => response.json())
-            .then(result => {
-                setData(Object.values(result));
-            })
+        .then(response => response.json())
+        .then(result => {
+            setIsLoaded(true)
+            setData(Object.values(result));
+        })
     }, [classeName]);
-    return data;
+    return [data , isLoaded];
 }
 
