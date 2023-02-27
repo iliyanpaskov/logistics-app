@@ -59,6 +59,8 @@
 .play-btn {
     display: flex;
     align-items: center;
+    color: black;
+    text-decoration: none;
 }
 
 @keyframes border-pulsate {
@@ -82,7 +84,6 @@
     border-radius: 50%;
     border: 10px solid #FF4800;
     animation: border-pulsate 2s infinite;
-
 }
 
 .play-btn-text {

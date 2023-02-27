@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getOneService } from "../../services/guestServices";
+import { getOne } from "../../services/guestServices";
 import Loading from "../Loading/Loading";
 import style from "./ServiceDetails.module.css";
 
@@ -9,13 +9,11 @@ const ServiceDetails = () => {
     const [serviceDetails, setServiceDetails] = useState({})
     useEffect(() => {
         const details = async () => {
-            let result = await getOneService("services", serviceId.objectId)
-            console.log(result);
-            console.log(serviceId.objectId);
+            let result = await getOne("services", serviceId.objectId);
             setServiceDetails(result);
         }
         details();
-    }, [])
+    }, [serviceId.objectId])
 
 
 

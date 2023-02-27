@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Loading from "../Loading/Loading.js";
 import * as guestServices from "../../services/guestServices.js"
@@ -38,11 +39,11 @@ const About = () => {
                         consectetur adipisicing elit. Debitis ad excepturi corrupti temporibus.
                         Et in laborum natus aut facere sequi!
                     </p>
-                    <section className={style["play-btn"]}>
+                    <Link to={"#"} className={style["play-btn"]}>
                         <i className="fa-solid fa-play"></i>
-                        {/* youbube video */}
+                        {/* youbube video  "https://www.youtube.com/watch?v=C4jjFanHZo8"*/}
                         <p className={style["play-btn-text"]}>Play video</p>
-                    </section>
+                    </Link>
                 </article>
             </section>
 
