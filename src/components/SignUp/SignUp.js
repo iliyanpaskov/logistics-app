@@ -23,8 +23,8 @@ const SignUp = () => {
 
         if (!values.password) {
             errors.password = 'Field must be filled !';
-        } else if (values.username.length < 5) {
-            errors.username = 'Password needs to be longer !';
+        } else if (values.password.length < 5) {
+            errors.password = 'Password needs to be longer !';
         }
 
         if (!values.confirmPassword) {
