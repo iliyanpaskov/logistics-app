@@ -5,7 +5,7 @@
     padding: 20px 30px;
 }
 
-.header-navigation-logo,
+
 .header-navigation-list,
 .header-navigation-user-list {
     display: flex;
@@ -48,21 +48,8 @@
 }
 
 
-.header-navigation-logo {
-    color: #FF4800;
-}
 
-.header-navigation-logo i {
-    font-size: 43px;
-    margin-right: 10px;
-}
 
-.header-navigation-logo p {
-    margin: 0;
-    font-size: 40px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
 
 .header-img-wrapper {
     width: 100%;

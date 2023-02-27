@@ -1,0 +1,17 @@
+.header-navigation-logo {
+    display: flex;
+    align-items: center;
+    color: #FF4800;
+}
+
+.header-navigation-logo i {
+    font-size: 43px;
+    margin-right: 10px;
+}
+
+.header-navigation-logo p {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+}

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Logo from '../Logo/Logo';
 
 import style from "./Header.module.css"
 
@@ -6,12 +7,7 @@ const Header = () => {
     return (
         <header className={style["header-wrapper"]}>
             <section className={style["header-navigation-wrapper"]}>
-
-                <article className={style["header-navigation-logo"]}>
-                    <i className="fa-solid fa-truck-fast"></i>
-                    <p className={style["header-navigation-logo-text"]}>S&F Logistics</p>
-                </article>
-
+                <Logo />
                 <nav className={style["header-navigation"]}>
                     <ul className={style["header-navigation-list"]}>
                         <li className={style["header-navigation-list-item"]}>
@@ -44,7 +40,7 @@ const Header = () => {
                             <Link to="" >Login</Link>
                         </li>
                         <li className={style["header-navigation-user-list-item"]}>
-                            <Link to="" >Register</Link>
+                            <Link to="" >Sign Up</Link>
                         </li>
                         <li className={`${style["header-navigation-user-list-item"]} ${style["get-a-quote"]}`}>
                             <Link to="/contacts" >Get A Quote</Link>

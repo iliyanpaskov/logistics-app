@@ -8,7 +8,6 @@ const getSettings = {
     }
 }
 
-
 export async function getOne(className,objectId) {
     try {
         const res = await fetch(`${baseUrl}/${className}/${objectId}`, getSettings);
@@ -18,7 +17,6 @@ export async function getOne(className,objectId) {
         throw error;
     }
 }
-
 
 export async function sendMessage(values) {
     try {
@@ -35,7 +33,6 @@ export async function sendMessage(values) {
         if (res.status === 201) {
             return data;
         } else {
-            console.log(data.message);
             throw data.message;
         }
     } catch (error) {
