@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getOne } from "../../services/guestServices";
 import Loading from "../Loading/Loading";
+import Logo from "../Logo/Logo";
 import style from "./ServiceDetails.module.css";
 
 const ServiceDetails = () => {
@@ -14,8 +15,6 @@ const ServiceDetails = () => {
         }
         details();
     }, [serviceId.objectId])
-
-
 
     return (
         <section className={style.details}>
@@ -39,12 +38,12 @@ const ServiceDetails = () => {
                                 <li className={style["details-benefits-list-item"]}>24/7 support center</li>
                             </ul>
                         </article>
+                        <Logo/>
                     </section>
                     : <Loading />
             }
         </section>
     )
-
 }
 
 export default ServiceDetails;

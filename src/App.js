@@ -8,6 +8,7 @@ import Services from "./components/Services/Services";
 import ServiceDetails from "./components/ServiceDetails/ServiceDetails.js";
 import Contacts from "./components/Contacts/Contacts";
 import Error from "./components/Error/Error";
+import SignUp from "./components/SignUp/SignUp";
 
 import './App.css'
 
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/services" element={<Services />} />
                     <Route path="/services/:objectId" element={<ServiceDetails />} />
                     <Route path="/contacts" element={<Contacts />} />
+                    <Route path="/signup" element={<SignUp/>} />
                     <Route path="/*" element={<Error />} />
                 </Routes>
             </main>

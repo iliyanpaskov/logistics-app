@@ -34,13 +34,13 @@ const Header = () => {
                             <Link to="" >My Orders</Link>
                         </li>
                         <li className={style["header-navigation-user-list-item"]}>
-                            <Link to="" >Logout</Link>
+                            <Link to="/logout" >Logout</Link>
                         </li>
                         <li className={style["header-navigation-user-list-item"]}>
-                            <Link to="" >Login</Link>
+                            <Link to="/login" >Login</Link>
                         </li>
                         <li className={style["header-navigation-user-list-item"]}>
-                            <Link to="" >Sign Up</Link>
+                            <Link to="/signup" >Sign Up</Link>
                         </li>
                         <li className={`${style["header-navigation-user-list-item"]} ${style["get-a-quote"]}`}>
                             <Link to="/contacts" >Get A Quote</Link>

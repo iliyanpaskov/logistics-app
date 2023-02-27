@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom"
 import { Link } from "react-router-dom";
 import style from "../Footer/Footer.module.css"
+import Logo from "../Logo/Logo";
 
 const Footer = () => {
     return (
@@ -65,6 +66,7 @@ const Footer = () => {
                 <p className={style["footer-bottom-text"]}>
                 <span> &copy; S&F LOGISTICS </span>  All copyrights reserved.
                 </p>
+                <Logo/>
             </section>
 
         </footer>

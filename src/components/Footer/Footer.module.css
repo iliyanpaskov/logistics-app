@@ -59,6 +59,9 @@
 
 .footer-bottom {
     border-top: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-bottom-text {

@@ -4,6 +4,7 @@ import { sendMessage } from "../../../services/guestServices.js";
 import style from "./ContactsForm.module.css";
 
 const ContactsForm = () => {
+    const navigate = useNavigate();
     const validate = values => {
         const errors = {};
 
@@ -37,7 +38,6 @@ const ContactsForm = () => {
         return errors;
     }
 
-    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues: {
