@@ -1,39 +1,51 @@
 import { AuthContext } from "../../context/AuthenticationContext";
 import { useContext } from "react";
-import style from "./MyProfile.module.css"
-import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
-
+import { useUserFetch } from "../../hooks/useUserFetch";
+import Loading from "../Loading/Loading";
+import Logo from "../Logo/Logo";
+import LoginToAccess from "../LoginToAccess/LoginToAccess";
+import style from "./MyProfile.module.css"
 
 const MyProfile = () => {
-    const { user, isisAuthenticated } = useContext(AuthContext);
-
+    const { user, isAuthenticated } = useContext(AuthContext);
+    const [userData, isLoaded] = useUserFetch(user.objectId);
+    
     return (
-        <section className={style["my-profile-section"]}>
-            <section className={style["my-profile"]}>
-                <Logo />
-                <article className={style["my-profile-data"]}>
-                    <h3 className={style["my-profile-data-title"]}>Name:</h3>
-                    <p className={style["my-profile-data-text"]}>John Sullivan:</p>
-                </article>
-                <article className={style["my-profile-data"]}>
-                    <h3 className={style["my-profile-data-title"]}>Address:</h3>
-                    <p className={style["my-profile-data-text"]}>666 Street Toronto,CA</p>
-                </article>
-                <article className={style["my-profile-data"]}>
-                    <h3 className={style["my-profile-data-title"]}>Phone Number:</h3>
-                    <p className={style["my-profile-data-text"]}>0888666888</p>
-                </article>
-                <article className={style["my-profile-data"]}>
-                    <h3 className={style["my-profile-data-title"]}>Email:</h3>
-                    <p className={style["my-profile-data-text"]}>rocky@abv.bg</p>
-                </article>
-                <article className={style["my-profile-data-btns"]}>
-                    <Link className={style["my-profile-btn"]} to=""> Update Profile</Link>
-                    <Link className={style["my-profile-btn"]} to=""> My Orders</Link>
-                </article>
-            </section>
-        </section>
+        <>
+            {isLoaded
+                ? <section className={style["my-profile-section"]}>
+                    {
+                        isAuthenticated
+                            ? <section className={style["my-profile"]}>
+                                <Logo />
+                                <article className={style["my-profile-data"]}>
+                                    <h3 className={style["my-profile-data-title"]}>Name:</h3>
+                                    <p className={style["my-profile-data-text"]}>{userData.userData.fullName}</p>
+                                </article>
+                                <article className={style["my-profile-data"]}>
+                                    <h3 className={style["my-profile-data-title"]}>Address:</h3>
+                                    <p className={style["my-profile-data-text"]}>{userData.userData.deliveryAddress}</p>
+                                </article>
+                                <article className={style["my-profile-data"]}>
+                                    <h3 className={style["my-profile-data-title"]}>Phone Number:</h3>
+                                    <p className={style["my-profile-data-text"]}>{userData.userData.phone}</p>
+                                </article>
+                                <article className={style["my-profile-data"]}>
+                                    <h3 className={style["my-profile-data-title"]}>Username:</h3>
+                                    <p className={style["my-profile-data-text"]}>{userData.username}</p>
+                                </article>
+                                <article className={style["my-profile-data-btns"]}>
+                                    <Link className={style["my-profile-btn"]} to="/"> Update Profile</Link>
+                                    <Link className={style["my-profile-btn"]} to="/"> My Orders</Link>
+                                </article>
+                            </section>
+                            : <LoginToAccess />
+                    }
+                </section>
+                : <Loading />
+            }
+        </>
     )
 
 

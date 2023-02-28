@@ -1,0 +1,15 @@
+.access-btn-wrapper {
+    background: #F2F2F4;
+    text-align: center;
+    padding: 20px 50px;
+    box-shadow: 0px 0px 5px 3px lightgray;
+    
+}
+
+.access-btn {
+    color: #FF4800;
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
