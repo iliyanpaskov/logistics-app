@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { AuthenticationContext } from "./context/AuthenticationContext";
+import { AuthenticationState } from "./context/AuthenticationContext";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -15,7 +15,7 @@ import './App.css'
 
 function App() {
     return (
-        <AuthenticationContext>
+        <AuthenticationState>
             <div className="app">
                 <Header />
                 <main>
@@ -32,7 +32,7 @@ function App() {
                 </main>
                 <Footer />
             </div>
-        </AuthenticationContext>
+        </AuthenticationState>
     );
 }
 

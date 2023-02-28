@@ -1,9 +1,13 @@
+import { AuthContext } from '../../context/AuthenticationContext';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 import style from "./Header.module.css"
 
 const Header = () => {
+    const { logoutData,isAuthenticated } = useContext(AuthContext);
+  
     return (
         <header className={style["header-wrapper"]}>
             <section className={style["header-navigation-wrapper"]}>

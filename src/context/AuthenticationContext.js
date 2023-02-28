@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
-export const AuthenticationContext = ({
+export const AuthenticationState = ({
     children
 }) => {
 
@@ -13,16 +13,21 @@ export const AuthenticationContext = ({
 
     })
 
-    function loginData(authenticationData) {
+    const loginData = (authenticationData) => {
         setUser(authenticationData);
     }
 
-
-    //TODO logooutData
-
+    const logoutData = () => {
+        setUser({
+            objectId: null,
+            username: null,
+            sessionToken: null,
+    
+        })
+    }
 
     return (
-        <AuthContext.Provider value={{user, loginData, isAuthenticated:Boolean(user.sessionToken)}}>
+        <AuthContext.Provider value={{user, loginData, logoutData, isAuthenticated:Boolean(user.sessionToken)}}>
             {children}
         </AuthContext.Provider>
     )

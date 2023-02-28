@@ -1,8 +1,14 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import style from "./Login.module.css"
+import { AuthContext } from "../../context/AuthenticationContext";
+import { login } from "../../services/userServices";
+import { addToUrl } from "../../services/utils";
+import style from "./Login.module.css";
+
 
 const Login = () => {
+    const { loginData } = useContext(AuthContext)
     const navigation = useNavigate();
 
     const validate = values => {
@@ -30,9 +36,20 @@ const Login = () => {
         },
         validate,
         onSubmit: values => {
-            //TODO api
-            alert(JSON.stringify(values, null, 2));
-            console.log(values);
+          let url = addToUrl('username', values.username,'password',values.password);
+            const getLogin = async () => {
+                let response = await login(`${url}`);
+            
+                loginData({
+                    objectId: response.objectId,
+                    username: values.username,
+                    sessionToken: response.sessionToken,
+                });
+            }
+            getLogin()
+
+            // alert(JSON.stringify(values, null, 2));
+
             //TODO natigate to
             navigation("/")
         }
@@ -40,7 +57,7 @@ const Login = () => {
 
     return (
         <section className={style["login-section"]}>
-            <form className={style["login-form"]} action="" onSubmit={formik.handleSubmit}>
+            <form className={style["login-form"]} onSubmit={formik.handleSubmit}>
                 <label className={style["login-form-label"]} htmlFor="username"> Username:</label>
                 <input className={style["login-form-input"]}
                     type="text"

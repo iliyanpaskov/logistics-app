@@ -41,7 +41,7 @@ const Footer = () => {
                     </li>
                     <li className={style["footer-list-item"]}>
                         <i className="fa-solid fa-chevron-right"></i>
-                        <Link className={style["footer-list-item-text"]} to="/services">Services</Link>
+                        <Link className={style["footer-list-item-text"]} to="/services">Services & Price</Link>
                     </li>
                     <li className={style["footer-list-item"]}>
                         <i className="fa-solid fa-chevron-right"></i>
@@ -64,9 +64,9 @@ const Footer = () => {
 
             <section className={style["footer-bottom"]}>
                 <p className={style["footer-bottom-text"]}>
-                <span> &copy; S&F LOGISTICS </span>  All copyrights reserved.
+                    <span> &copy; S&F LOGISTICS </span>  All copyrights reserved.
                 </p>
-                <Logo/>
+                <Logo />
             </section>
 
         </footer>

@@ -60,7 +60,7 @@ const ContactsForm = () => {
     })
 
     return (
-        <form onSubmit={formik.handleSubmit} action="" className={style["contacts-form"]}>
+        <form onSubmit={formik.handleSubmit}  className={style["contacts-form"]}>
             <label htmlFor="customerName">
                 <input className={style["form-input"]}
                     onChange={formik.handleChange}
