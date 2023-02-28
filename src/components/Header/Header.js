@@ -1,12 +1,18 @@
 import { AuthContext } from '../../context/AuthenticationContext';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 import style from "./Header.module.css"
 
 const Header = () => {
     const { logoutData,isAuthenticated } = useContext(AuthContext);
+    const navigation = useNavigate();
+    const userLogout = () => {
+        logoutData();
+        navigation("/");
+        //TODO notifications
+    }
   
     return (
         <header className={style["header-wrapper"]}>
@@ -38,7 +44,7 @@ const Header = () => {
                             <Link to="" >My Orders</Link>
                         </li>
                         <li className={style["header-navigation-user-list-item"]}>
-                            <Link to="/logout" >Logout</Link>
+                            <Link onClick={userLogout} >Logout</Link>
                         </li>
                         <li className={style["header-navigation-user-list-item"]}>
                             <Link to="/login" >Login</Link>
