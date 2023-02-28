@@ -33,7 +33,7 @@ const Header = () => {
         return (
             <ul className={style["header-navigation-user-list"]}>
                 <li className={style["header-navigation-user-list-item"]}>
-                    <Link to="" >My Profile</Link>
+                    <Link to="/my-profile" >My Profile</Link>
                 </li>
                 <li className={style["header-navigation-user-list-item"]}>
                     <Link to="" >My Orders</Link>

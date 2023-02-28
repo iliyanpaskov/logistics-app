@@ -6,7 +6,7 @@ import { signUp } from "../../services/userServices";
 import style from "./SignUp.module.css"
 
 const SignUp = () => {
-    const { loginData, user } = useContext(AuthContext);
+    const { loginData } = useContext(AuthContext);
     const navigation = useNavigate();
 
     const validate = values => {

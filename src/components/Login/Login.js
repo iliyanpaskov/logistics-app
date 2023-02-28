@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { AuthContext } from "../../context/AuthenticationContext";
 import { login } from "../../services/userServices";
-import { addToUrl } from "../../services/utils";
+import { updateLoginUrl } from "../../services/utils";
 import style from "./Login.module.css";
 
 
@@ -36,7 +36,7 @@ const Login = () => {
         },
         validate,
         onSubmit: values => {
-          let url = addToUrl('username', values.username,'password',values.password);
+          let url = updateLoginUrl('username', values.username,'password',values.password);
             const getLogin = async () => {
                 let response = await login(`${url}`);
             
