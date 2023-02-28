@@ -1,8 +1,12 @@
+import { AuthContext } from "../../context/AuthenticationContext"
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
+import { signUp } from "../../services/userServices";
 import style from "./SignUp.module.css"
 
 const SignUp = () => {
+    const { loginData, user } = useContext(AuthContext);
     const navigation = useNavigate();
 
     const validate = values => {
@@ -44,10 +48,23 @@ const SignUp = () => {
         },
         validate,
         onSubmit: values => {
-            //TODO api
+            const signUpSubmit = async () => {
+                let response = await signUp({
+                    username: values.username,
+                    email: values.email,
+                    password: values.password,
+                    confirmPassword: values.confirmPassword,
+                });
+
+                loginData({
+                    objectId: response.objectId,
+                    username: values.username,
+                    sessionToken: response.sessionToken,
+                });
+
+            }
+            signUpSubmit();
             alert(JSON.stringify(values, null, 2));
-            console.log(values);
-            //TODO natigate to
             navigation('/')
         }
     })
@@ -113,7 +130,7 @@ const SignUp = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                 />
-                 {
+                {
                     formik.touched.confirmPassword && formik.errors.confirmPassword
                         ? <div className={style["sign-up-error"]}>{formik.errors.confirmPassword}</div>
                         : null

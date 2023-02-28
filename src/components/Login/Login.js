@@ -42,16 +42,16 @@ const Login = () => {
             
                 loginData({
                     objectId: response.objectId,
-                    username: values.username,
+                    username: response.username,
                     sessionToken: response.sessionToken,
                 });
             }
-            getLogin()
+            getLogin();
 
             // alert(JSON.stringify(values, null, 2));
 
             //TODO natigate to
-            navigation("/")
+            navigation("/");
         }
     })
 

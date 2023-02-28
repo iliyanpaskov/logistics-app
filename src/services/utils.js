@@ -1,8 +1,9 @@
-export function addToUrl(key, value,s,r) {
+const loginUrl = process.env.REACT_APP_LOGIN_URL;
+
+export function addToUrl(key, value,secondKey,secondValue) {
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set(key,value);
-    searchParams.set(s,r);
-    const baseUrl = "https://parseapi.back4app.com/login";
-    const newRelativePathQuery = baseUrl + "?" + searchParams.toString() ;
+    searchParams.set(secondKey,secondValue);
+    const newRelativePathQuery = loginUrl + "?" + searchParams.toString() ;
     return newRelativePathQuery;
 }
