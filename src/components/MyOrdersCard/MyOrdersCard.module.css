@@ -1,10 +1,12 @@
 .orders-list-item {
     width: 310px;
+    margin: 30px;
     background: rgb(194, 49, 168);
     background: linear-gradient(41deg, rgba(194, 49, 168, 1) 0%,
             rgba(174, 46, 193, 1) 50%, rgba(140, 38, 240, 1) 100%);
     padding: 20px;
     border-radius: 20px;
+    box-shadow: 0px 0px 5px 3px lightgray;
 }
 
 .orders-list-item-status {

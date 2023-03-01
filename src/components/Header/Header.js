@@ -36,7 +36,7 @@ const Header = () => {
                     <Link to="/my-profile" >My Profile</Link>
                 </li>
                 <li className={style["header-navigation-user-list-item"]}>
-                    <Link to="" >My Orders</Link>
+                    <Link to="/my-orders" >My Orders</Link>
                 </li>
                 <li className={style["header-navigation-user-list-item"]}>
                     <Link onClick={userLogout} >Logout</Link>

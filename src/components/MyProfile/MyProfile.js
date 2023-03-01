@@ -36,7 +36,7 @@ const MyProfile = () => {
                                     <p className={style["my-profile-data-text"]}>{userData.username}</p>
                                 </article>
                                 <article className={style["my-profile-data-btns"]}>
-                                    <Link className={style["my-profile-btn"]} to="/"> My Orders</Link>
+                                    <Link className={style["my-profile-btn"]} to="/my-orders"> My Orders</Link>
                                     <Link className={style["my-profile-btn"]} to="/"> Update Profile</Link>
                                     <Link className={style["my-profile-btn"]} to="/"> Delete Profile</Link>
                                 </article>
