@@ -16,7 +16,6 @@ export function useUserFetch (userId) {
         .then (result => {
             setIsLoaded(true);
             setState(result);
-            console.log(state);
         })
         .catch (error => {
             throw error

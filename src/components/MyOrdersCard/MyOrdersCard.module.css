@@ -1,0 +1,66 @@
+.orders-list-item {
+    width: 310px;
+    background: rgb(194, 49, 168);
+    background: linear-gradient(41deg, rgba(194, 49, 168, 1) 0%,
+            rgba(174, 46, 193, 1) 50%, rgba(140, 38, 240, 1) 100%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.orders-list-item-status {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.orders-list-item-status-title,
+.orders-list-item-status-content {
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+.orders-list-item-status-title {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.orders-list-item-status-content {
+    font-size: 19px;
+    font-weight: 300;
+}
+
+.orders-list-item-info {
+    margin: 20px;
+    text-align: center;
+    border-top: 1px solid rgb(252, 158, 224);
+}
+
+.orders-list-item-info-title {
+    text-transform: capitalize;
+    margin: 25px;
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.orders-list-item-info-content {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.orders-list-item-info-btn {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    background: rgb(90, 202, 250);
+    background: linear-gradient(43deg, rgba(90, 202, 250, 1) 0%,
+            rgba(99, 168, 248, 1) 43%, rgba(116, 113, 254, 1) 100%);
+    padding: 8px 22px;
+    border-radius: 7px;
+}
+
+.orders-list-item-info-btn:hover {
+    background: greenyellow;
+    color: black;
+}

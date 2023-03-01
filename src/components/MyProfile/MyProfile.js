@@ -10,7 +10,7 @@ import style from "./MyProfile.module.css"
 const MyProfile = () => {
     const { user, isAuthenticated } = useContext(AuthContext);
     const [userData, isLoaded] = useUserFetch(user.objectId);
-    
+
     return (
         <>
             {isLoaded
@@ -36,8 +36,9 @@ const MyProfile = () => {
                                     <p className={style["my-profile-data-text"]}>{userData.username}</p>
                                 </article>
                                 <article className={style["my-profile-data-btns"]}>
-                                    <Link className={style["my-profile-btn"]} to="/"> Update Profile</Link>
                                     <Link className={style["my-profile-btn"]} to="/"> My Orders</Link>
+                                    <Link className={style["my-profile-btn"]} to="/"> Update Profile</Link>
+                                    <Link className={style["my-profile-btn"]} to="/"> Delete Profile</Link>
                                 </article>
                             </section>
                             : <LoginToAccess />

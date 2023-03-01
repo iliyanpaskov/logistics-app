@@ -11,6 +11,7 @@ import Error from "./components/Error/Error";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
 import MyProfile from "./components/MyProfile/MyProfile";
+import MyOrders from "./components/MyOrders/MyOrders";
 
 import './App.css'
 
@@ -29,6 +30,7 @@ function App() {
                         <Route path="/signup" element={<SignUp />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/my-profile" element={<MyProfile />} />
+                        <Route path="/my-orders" element={<MyOrders />} />
                         <Route path="/*" element={<Error />} />
                     </Routes>
                 </main>
