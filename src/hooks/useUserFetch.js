@@ -14,8 +14,8 @@ export function useUserFetch (userId) {
         })
         .then (res => res.json())
         .then (result => {
-            setIsLoaded(true);
             setState(result);
+            setIsLoaded(true);
         })
         .catch (error => {
             throw error

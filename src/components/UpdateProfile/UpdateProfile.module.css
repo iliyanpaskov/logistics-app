@@ -1,0 +1,58 @@
+.update-section {
+    margin: 90px auto;
+    width: 40%;
+    background: #F2F2F4;
+    box-shadow: 0px 0px 5px 3px lightgray;
+}
+
+.update-form {
+    padding: 30px 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form-label {
+    font-size: 24px;
+    text-transform: capitalize;
+    margin: 30px 0 10px 0;
+    color: #FF4800;
+    font-weight: 500;
+}
+
+.update-form-input {
+    height: 40px;
+    padding: 20px 30px;
+}
+
+.update-btn {
+    margin: 30px auto 0 auto;
+    padding: 10px;
+    width: 200px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background: #FF4800;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.update-btn:hover {
+    background: rgb(47, 255, 47);
+    cursor: pointer;
+    color: black;
+}
+
+.update-error {
+    color: red;
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.btns-wrapper {
+    display: flex;
+    justify-content: space-around;
+}

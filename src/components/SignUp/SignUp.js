@@ -8,6 +8,7 @@ import style from "./SignUp.module.css"
 const SignUp = () => {
     const { loginData } = useContext(AuthContext);
     const navigation = useNavigate();
+    
 
     const validate = values => {
         const errors = {};
@@ -71,7 +72,7 @@ const SignUp = () => {
 
     return (
         <section className={style["signup-section"]}>
-            <form className={style["signup-form"]} action="" onSubmit={formik.handleSubmit}>
+            <form className={style["signup-form"]}  onSubmit={formik.handleSubmit}>
                 <label className={style["sign-up-form-label"]} htmlFor="username"> Username:</label>
                 <input className={style["sign-up-form-input"]}
                     type="text"
