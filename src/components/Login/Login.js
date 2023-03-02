@@ -1,7 +1,5 @@
 import { useContext } from "react";
-import { UserDataContext } from "../../context/UserDataContext";
 import { AuthContext } from "../../context/AuthenticationContext";
-import { useUserFetch } from "../../hooks/useUserFetch";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { login } from "../../services/userServices";
@@ -10,10 +8,7 @@ import style from "./Login.module.css";
 
 
 const Login = () => {
-    const { user, loginData } = useContext(AuthContext);
-    const { setUserInfo } = useContext(UserDataContext);
-    const [userData] = useUserFetch(user.objectId);
-
+    const {loginData } = useContext(AuthContext);
     const navigation = useNavigate();
 
     const validate = values => {
@@ -50,13 +45,10 @@ const Login = () => {
                     username: response.username,
                     sessionToken: response.sessionToken,
                 });
-
-                setUserInfo(userData);
             }
             getLogin();
 
             // alert(JSON.stringify(values, null, 2));
-
             navigation("/");
         }
     })

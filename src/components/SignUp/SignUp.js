@@ -68,7 +68,7 @@ const SignUp = () => {
             fullName: '',
             address: '',
             phone: '',
-            myOrders: '',
+            myOrders: {},
         },
         validate,
         onSubmit: values => {
@@ -102,7 +102,7 @@ const SignUp = () => {
 
             }
             signUpSubmit();
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             navigation('/')
         }
     })
