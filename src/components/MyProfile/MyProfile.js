@@ -3,18 +3,24 @@ import { UserDataContext } from "../../context/UserDataContext";
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUserFetch } from "../../hooks/useUserFetch";
+import { delUser } from "../../services/userServices";
 import Loading from "../Loading/Loading";
 import Logo from "../Logo/Logo";
 import LoginToAccess from "../LoginToAccess/LoginToAccess";
 import style from "./MyProfile.module.css"
 
 const MyProfile = () => {
-    const { user, isAuthenticated } = useContext(AuthContext);
+    const { user, logoutData, isAuthenticated } = useContext(AuthContext);
     const [userData, isLoaded] = useUserFetch(user.objectId);
     const { setUserInfo } = useContext(UserDataContext);
     useEffect(() => {
         setUserInfo(userData);
     }, [userData])
+
+    const deleteHandler = function () {
+        delUser(user.objectId, user.sessionToken);
+        logoutData();
+    }
 
 
     return (
@@ -52,7 +58,7 @@ const MyProfile = () => {
                                 <article className={style["my-profile-data-btns"]}>
                                     <Link className={style["my-profile-btn"]} to="/my-orders"> My Orders</Link>
                                     <Link className={style["my-profile-btn"]} to="/update-profile"> Update Profile</Link>
-                                    <Link className={style["my-profile-btn"]} to="/"> Delete Profile</Link>
+                                    <Link className={style["my-profile-btn"]} onClick={deleteHandler} to="/"> Delete Profile</Link>
                                 </article>
                             </section>
                             : <LoginToAccess />

@@ -55,3 +55,20 @@ export async function update(id, token, values) {
         throw error;
     }
 }
+
+export async function delUser (id, token) {
+    try {
+        let response = await fetch (`${process.env.REACT_APP_SIGN_UP_URL}/${id}`,{
+            method:"DELETE",
+            headers:{
+                "X-Parse-Application-Id": "mmiJjV5bLwaTJXMktq7zHjB637Ml1maDGfmdTiuZ",
+                "X-Parse-REST-API-Key": "rlKrIGD7HJ5bJOJ5KPOlObKogSzKz5J2EU7z3nZe",
+                "X-Parse-Session-Token": `${token}`
+            }
+        })
+        let data = response.json();
+        return data;
+    } catch (error) {
+        throw error;
+    }
+} 
