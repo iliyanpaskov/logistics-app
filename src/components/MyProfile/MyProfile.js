@@ -15,7 +15,7 @@ const MyProfile = () => {
     const { setUserInfo } = useContext(UserDataContext);
     useEffect(() => {
         setUserInfo(userData);
-    }, [userData])
+    }, [userData]);
 
     const deleteHandler = function () {
         delUser(user.objectId, user.sessionToken);
