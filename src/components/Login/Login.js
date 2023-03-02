@@ -1,14 +1,19 @@
 import { useContext } from "react";
+import { UserDataContext } from "../../context/UserDataContext";
+import { AuthContext } from "../../context/AuthenticationContext";
+import { useUserFetch } from "../../hooks/useUserFetch";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { AuthContext } from "../../context/AuthenticationContext";
 import { login } from "../../services/userServices";
 import { updateLoginUrl } from "../../services/utils";
 import style from "./Login.module.css";
 
 
 const Login = () => {
-    const { loginData } = useContext(AuthContext)
+    const { user, loginData } = useContext(AuthContext);
+    const { setUserInfo } = useContext(UserDataContext);
+    const [userData] = useUserFetch(user.objectId);
+
     const navigation = useNavigate();
 
     const validate = values => {
@@ -36,21 +41,22 @@ const Login = () => {
         },
         validate,
         onSubmit: values => {
-          let url = updateLoginUrl('username', values.username,'password',values.password);
+            let url = updateLoginUrl('username', values.username, 'password', values.password);
             const getLogin = async () => {
                 let response = await login(`${url}`);
-            
+
                 loginData({
                     objectId: response.objectId,
                     username: response.username,
                     sessionToken: response.sessionToken,
                 });
+
+                setUserInfo(userData);
             }
             getLogin();
 
             // alert(JSON.stringify(values, null, 2));
 
-            //TODO natigate to
             navigation("/");
         }
     })

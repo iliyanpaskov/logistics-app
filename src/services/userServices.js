@@ -37,6 +37,21 @@ export async function signUp(values) {
     }
 }
 
-export async function update(params) {
-    
+export async function update(id, token, values) {
+    try {
+        let response = await fetch(`${process.env.REACT_APP_SIGN_UP_URL}/${id}`, {
+            method: "PUT",
+            headers: {
+                "X-Parse-Application-Id": "mmiJjV5bLwaTJXMktq7zHjB637Ml1maDGfmdTiuZ",
+                "X-Parse-REST-API-Key": "rlKrIGD7HJ5bJOJ5KPOlObKogSzKz5J2EU7z3nZe",
+                "X-Parse-Session-Token": `${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(values)
+        })
+        let data = response.json();
+        return data;
+    } catch (error) {
+        throw error;
+    }
 }

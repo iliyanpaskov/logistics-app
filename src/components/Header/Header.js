@@ -1,4 +1,5 @@
 import { AuthContext } from '../../context/AuthenticationContext';
+import { UserDataContext } from '../../context/UserDataContext';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
@@ -7,9 +8,11 @@ import style from "./Header.module.css"
 
 const Header = () => {
     const { logoutData, isAuthenticated } = useContext(AuthContext);
+    const { clearUserInfo } = useContext(UserDataContext);
     const navigation = useNavigate();
     const userLogout = () => {
         logoutData();
+        clearUserInfo();
         navigation("/");
     }
 
@@ -39,7 +42,7 @@ const Header = () => {
                     <Link to="/my-orders" >My Orders</Link>
                 </li>
                 <li className={style["header-navigation-user-list-item"]}>
-                    <Link onClick={userLogout} >Logout</Link>
+                    <Link onClick={userLogout} to="/">Logout</Link>
                 </li>
                 <li className={`${style["header-navigation-user-list-item"]} ${style["get-a-quote"]}`}>
                     <Link to="/contacts" >Get A Quote</Link>

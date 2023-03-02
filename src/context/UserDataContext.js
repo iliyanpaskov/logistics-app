@@ -3,14 +3,31 @@ import { createContext, useState } from "react";
 export const UserDataContext = createContext();
 
 export const UserDataState = ({ children }) => {
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState({
+        username: null,
+        email: null,
+        password: null,
+        confirmPassword: null,
+        fullName: null,
+        address: null,
+        phone: null,
+        myOrders: {},
+    });
 
     const setUserInfo = (data) => {
         setUserData(data);
     }
 
     const clearUserInfo = () => {
-        setUserData({});
+        setUserData({
+            username: null,
+            email: null,
+            confirmPassword: null,
+            fullName: null,
+            address: null,
+            phone: null,
+            myOrders: {},
+        });
     }
 
     return (

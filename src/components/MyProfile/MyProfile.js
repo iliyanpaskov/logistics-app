@@ -12,9 +12,9 @@ const MyProfile = () => {
     const { user, isAuthenticated } = useContext(AuthContext);
     const [userData, isLoaded] = useUserFetch(user.objectId);
     const { setUserInfo } = useContext(UserDataContext);
-    useEffect (()=>{
+    useEffect(() => {
         setUserInfo(userData);
-    },[userData])
+    }, [userData])
 
 
     return (
@@ -26,20 +26,28 @@ const MyProfile = () => {
                             ? <section className={style["my-profile"]}>
                                 <Logo />
                                 <article className={style["my-profile-data"]}>
+                                    <h3 className={style["my-profile-data-title"]}>Username:</h3>
+                                    <p className={style["my-profile-data-text"]}>
+                                        {userData.username}
+                                    </p>
+                                </article>
+                                <article className={style["my-profile-data"]}>
                                     <h3 className={style["my-profile-data-title"]}>Name:</h3>
-                                    <p className={style["my-profile-data-text"]}>{userData.userData.fullName}</p>
+                                    <p className={style["my-profile-data-text"]}>
+                                        {userData.fullName}
+                                    </p>
                                 </article>
                                 <article className={style["my-profile-data"]}>
                                     <h3 className={style["my-profile-data-title"]}>Address:</h3>
-                                    <p className={style["my-profile-data-text"]}>{userData.userData.deliveryAddress}</p>
+                                    <p className={style["my-profile-data-text"]}>
+                                        {userData.address}
+                                    </p>
                                 </article>
                                 <article className={style["my-profile-data"]}>
                                     <h3 className={style["my-profile-data-title"]}>Phone Number:</h3>
-                                    <p className={style["my-profile-data-text"]}>{userData.userData.phone}</p>
-                                </article>
-                                <article className={style["my-profile-data"]}>
-                                    <h3 className={style["my-profile-data-title"]}>Username:</h3>
-                                    <p className={style["my-profile-data-text"]}>{userData.username}</p>
+                                    <p className={style["my-profile-data-text"]}>
+                                        {userData.phone}
+                                    </p>
                                 </article>
                                 <article className={style["my-profile-data-btns"]}>
                                     <Link className={style["my-profile-btn"]} to="/my-orders"> My Orders</Link>

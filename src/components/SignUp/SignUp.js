@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { signUp } from "../../services/userServices";
 import style from "./SignUp.module.css"
+import { UserDataContext } from "../../context/UserDataContext";
 
 const SignUp = () => {
     const { loginData } = useContext(AuthContext);
+    const {setUserInfo} = useContext(UserDataContext)
     const navigation = useNavigate();
-    
+
 
     const validate = values => {
         const errors = {};
@@ -37,6 +39,23 @@ const SignUp = () => {
         } else if (values.confirmPassword !== values.password) {
             errors.confirmPassword = 'Invalid confirm password !';
         }
+
+        if (!values.fullName) {
+            errors.fullName = 'Field must be filled !';
+        } else if (!/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/i.test(values.fullName)) {
+            errors.fullName = 'Your name must to contain space and no numbers!';
+        }
+
+        if (!values.address) {
+            errors.address = 'Field must be filled !';
+        }
+
+        if (!values.phone) {
+            errors.phone = 'Field must be filled !';
+        } else if (!/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(values.phone)) {
+            errors.phone = 'Invalid phone number !';
+        }
+
         return errors;
     }
 
@@ -46,6 +65,10 @@ const SignUp = () => {
             email: '',
             password: '',
             confirmPassword: '',
+            fullName: '',
+            address: '',
+            phone: '',
+            myOrders: '',
         },
         validate,
         onSubmit: values => {
@@ -55,6 +78,10 @@ const SignUp = () => {
                     email: values.email,
                     password: values.password,
                     confirmPassword: values.confirmPassword,
+                    fullName: values.fullName,
+                    address: values.address,
+                    phone: values.phone,
+                    myOrders: {},
                 });
 
                 loginData({
@@ -62,6 +89,16 @@ const SignUp = () => {
                     username: values.username,
                     sessionToken: response.sessionToken,
                 });
+
+                setUserInfo({
+                    username: values.username,
+                    email: values.email,
+                    confirmPassword: values.confirmPassword,
+                    fullName: values.fullName,
+                    address: values.address,
+                    phone: values.phone,
+                    myOrders: {},
+                })
 
             }
             signUpSubmit();
@@ -72,13 +109,13 @@ const SignUp = () => {
 
     return (
         <section className={style["signup-section"]}>
-            <form className={style["signup-form"]}  onSubmit={formik.handleSubmit}>
+            <form className={style["signup-form"]} onSubmit={formik.handleSubmit}>
                 <label className={style["sign-up-form-label"]} htmlFor="username"> Username:</label>
                 <input className={style["sign-up-form-input"]}
                     type="text"
                     id="username"
                     name="username"
-                    placeholder="John Sillver"
+                    placeholder="john.sillver"
                     value={formik.values.username}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -134,6 +171,54 @@ const SignUp = () => {
                 {
                     formik.touched.confirmPassword && formik.errors.confirmPassword
                         ? <div className={style["sign-up-error"]}>{formik.errors.confirmPassword}</div>
+                        : null
+                }
+
+                <label className={style["sign-up-form-label"]} htmlFor="fullName"> Full Name:</label>
+                <input className={style["sign-up-form-input"]}
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="John Silver"
+                    value={formik.values.fullName}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+                {
+                    formik.touched.fullName && formik.errors.fullName
+                        ? <div className={style["sign-up-error"]}>{formik.errors.fullName}</div>
+                        : null
+                }
+
+                <label className={style["sign-up-form-label"]} htmlFor="address"> Address:</label>
+                <input className={style["sign-up-form-input"]}
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="777 Magic Street, New York,NY"
+                    value={formik.values.address}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+                {
+                    formik.touched.address && formik.errors.address
+                        ? <div className={style["sign-up-error"]}>{formik.errors.address}</div>
+                        : null
+                }
+
+                <label className={style["sign-up-form-label"]} htmlFor="phone"> Phone Number:</label>
+                <input className={style["sign-up-form-input"]}
+                    type="phone"
+                    id="phone"
+                    name="phone"
+                    placeholder="0888111999"
+                    value={formik.values.phone}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+                {
+                    formik.touched.phone && formik.errors.phone
+                        ? <div className={style["sign-up-error"]}>{formik.errors.phone}</div>
                         : null
                 }
 

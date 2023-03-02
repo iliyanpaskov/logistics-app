@@ -10,7 +10,6 @@ const UpdateProfile = () => {
     const { user } = useContext(AuthContext);
     const { userData } = useContext(UserDataContext);
     const navigation = useNavigate();
-
     const validate = values => {
         const errors = {};
         if (!values.username) {
@@ -23,10 +22,8 @@ const UpdateProfile = () => {
 
         if (!values.fullName) {
             errors.fullName = 'Field must be filled !';
-        } else if (values.fullName.length < 3) {
-            errors.fullName = 'Full name needs to be longer !';
-        } else if (values.fullName.length > 40) {
-            errors.fullName = 'Full name needs to be shorter !';
+        } else if (!/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/i.test(values.fullName)) {
+            errors.fullName = 'Your name must to contain space and no numbers!';
         }
 
         if (!values.address) {
@@ -35,25 +32,24 @@ const UpdateProfile = () => {
 
         if (!values.phone) {
             errors.phone = 'Field must be filled !';
-        } else if (values.phone.length < 6) {
-            errors.phone = 'Invalid email phone number !';
-        } else if (values.phone.length > 20) {
-            errors.phone = 'Invalid email phone number !';
+        } else if (!/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i.test(values.phone)) {
+            errors.phone = 'Invalid phone number !';
         }
+
         return errors;
     }
 
     const formik = useFormik({
         initialValues: {
             username: userData.username,
-            fullName: userData.userData.fullName,
-            address: userData.userData.deliveryAddress,
-            phone: userData.userData.phone,
+            fullName: userData.fullName,
+            address: userData.address,
+            phone: userData.phone,
         },
         validate,
         onSubmit: values => {
             const updateSubmit = async () => {
-                let response = await update({
+                let response = await update(user.objectId, user.sessionToken, {
                     username: values.username,
                     fullName: values.fullName,
                     address: values.address,
