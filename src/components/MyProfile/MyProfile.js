@@ -18,6 +18,7 @@ const MyProfile = () => {
     }, [userData]);
 
     const deleteHandler = function () {
+        alert("Are you sure that you want to delete your profile ?");
         delUser(user.objectId, user.sessionToken);
         logoutData();
     }

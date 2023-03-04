@@ -7,12 +7,12 @@ import Loading from "../Loading/Loading";
 import MakeAnOrder from "../MakeAnOrder/MakeAnOrder";
 
 const MyOrders = () => {
-    const { user } = useContext(AuthContext);
+    const { user, isAuthenticated } = useContext(AuthContext);
     const [state, isLoaded, hasOrders] = useUserFetch(user.objectId);
 
     return (
         <section className={style["orders-section"]}>
-            {isLoaded
+            {isLoaded && isAuthenticated
                 ? <article className={style["orders-list-wrapper"]}>
                     {hasOrders
                         ? <>

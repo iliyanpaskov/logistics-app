@@ -10,6 +10,7 @@ const UpdateProfile = () => {
     const { user } = useContext(AuthContext);
     const { userData } = useContext(UserDataContext);
     const navigation = useNavigate();
+    
     const validate = values => {
         const errors = {};
         if (!values.username) {

@@ -1,4 +1,4 @@
-.make-an-order{
+.make-an-order {
     background: #F2F2F4;
     box-shadow: 0px 0px 5px 3px lightgray;
     padding: 20px 60px;
@@ -6,26 +6,60 @@
     flex-direction: column;
     align-items: center;
     text-transform: capitalize;
+    width: 600px;
 }
 
-.make-an-order-title{
-    font-size: 28px;
-    font-weight: 600;
+.make-an-order-form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
 }
 
-.make-an-order-btn{
+.make-an-order-form-label{
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 16px;
+}
+
+.make-an-order-form-input{
+    height: 30px;
+    font-size: 16px;
+}
+
+.make-an-order-form-textarea{
+    height: 80px;
+    font-size: 15px;
+}
+
+.make-an-order-btns-wrapper{
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.make-an-order-btn {
     background: #FF4800;
     color: white;
     padding: 8px 30px;
     border-radius: 10px;
+    border: none;
     text-decoration: none;
     font-size: 22px;
     box-shadow: 0px 0px 8px 0px yellow;
     font-weight: 600;
+    margin: 10px;
 }
 
-.make-an-order-btn:hover{
+.make-an-order-btn:hover {
     background: yellowgreen;
     color: black;
     box-shadow: 0px 0px 8px 0px #FF4800;
+}
+
+.make-an-order-error {
+    color: red;
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
 }

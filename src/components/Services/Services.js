@@ -1,8 +1,9 @@
+import { useClassesFetch } from "../../hooks/useClassesFetch";
+import { idGenerator } from "../../services/utils";
 import ServicesCard from "../ServicesCard/ServicesCard";
 import PriceCard from "../PriceCard/PriceCard";
 import Loading from "../Loading/Loading";
 import style from "./Services.module.css"
-import { useClassesFetch } from "../../hooks/useClassesFetch";
 
 const Services = () => {
     const [services, isLoaded] = useClassesFetch('services', "GET");
@@ -25,7 +26,7 @@ const Services = () => {
                 <ul className={style["services-price-list"]}>
                     {
                         isLoaded
-                            ? services[0].map((x) => Object.entries(x.price).map(y => <PriceCard key={y[1]} service={x.service} period={y[0]} price={y[1]} />))
+                            ? services[0].map((x) => Object.entries(x.price).map(y => <PriceCard key={idGenerator} service={x.service} period={y[0]} price={y[1]} />))
                             : <Loading />
                     }
                 </ul>

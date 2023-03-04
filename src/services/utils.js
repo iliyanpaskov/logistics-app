@@ -7,3 +7,9 @@ export function updateLoginUrl(key, value,secondKey,secondValue) {
     const newRelativePathQuery = loginUrl + "?" + searchParams.toString() ;
     return newRelativePathQuery;
 }
+
+export function idGenerator() {
+    const id = Math.random().toString().split('').slice(2,8).join('');
+    console.log(id);
+    return id
+}
