@@ -34,7 +34,7 @@ const MakeAnOrder = () => {
             orderId: '',
             information: '',
             service: '',
-            status: 'Pending',
+            status: 'Pending...',
         },
         validate,
         onSubmit: values => {
@@ -43,14 +43,14 @@ const MakeAnOrder = () => {
                     orderId: values.orderId,
                     information: values.information,
                     service: values.service,
-                    status: 'Pending',
+                    status: 'Pending...',
                 }
                 
                 let response = await update(user.objectId, user.sessionToken, {
-                    myOrders: {
+                    myOrders: [
                         ...userData.myOrders,
                         newOrder
-                    }
+                ]
                 });
             }
             newOrderSubmit(); alert(JSON.stringify(values, null, 2));

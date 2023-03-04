@@ -17,7 +17,8 @@ const MyOrders = () => {
                     {hasOrders
                         ? <>
                             <ul className={style["orders-list"]}>
-                                {Object.values(state.myOrders).map(x => <MyOrdersCard key={x.orderId} order={x} />)}
+                                {console.log(state.myOrders)}
+                                {state.myOrders.map(x => <MyOrdersCard key={x.orderId} order={x} />)}
                             </ul>
                             <MakeAnOrder />
                         </>

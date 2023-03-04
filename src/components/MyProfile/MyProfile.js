@@ -25,7 +25,7 @@ const MyProfile = () => {
 
 
     return (
-        <>
+        <div className={style["my-profile-wrapper"]}>
             {isLoaded
                 ? <section className={style["my-profile-section"]}>
                     {
@@ -67,7 +67,7 @@ const MyProfile = () => {
                 </section>
                 : <Loading />
             }
-        </>
+        </div>
     )
 
 

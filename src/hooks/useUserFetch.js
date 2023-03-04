@@ -17,7 +17,7 @@ export function useUserFetch(userId) {
             .then(result => {
                 setState(result);
                 setIsLoaded(true);
-                if (Object.keys(result.myOrders).length > 1) {
+                if (Object.keys(result.myOrders).length > 0) {
                     setHasOrders(true);
                 }
             })

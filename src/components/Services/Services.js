@@ -26,7 +26,7 @@ const Services = () => {
                 <ul className={style["services-price-list"]}>
                     {
                         isLoaded
-                            ? services[0].map((x) => Object.entries(x.price).map(y => <PriceCard key={idGenerator} service={x.service} period={y[0]} price={y[1]} />))
+                            ? services[0].map((x) => Object.entries(x.price).map(y => <PriceCard key={idGenerator()} service={x.service} period={y[0]} price={y[1]} />))
                             : <Loading />
                     }
                 </ul>

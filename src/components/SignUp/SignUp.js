@@ -68,7 +68,7 @@ const SignUp = () => {
             fullName: '',
             address: '',
             phone: '',
-            myOrders: {},
+            myOrders: [],
         },
         validate,
         onSubmit: values => {
@@ -81,7 +81,7 @@ const SignUp = () => {
                     fullName: values.fullName,
                     address: values.address,
                     phone: values.phone,
-                    myOrders: {},
+                    myOrders: [],
                 });
 
                 loginData({
@@ -97,7 +97,7 @@ const SignUp = () => {
                     fullName: values.fullName,
                     address: values.address,
                     phone: values.phone,
-                    myOrders: {},
+                    myOrders: response.myOrders,
                 })
 
             }

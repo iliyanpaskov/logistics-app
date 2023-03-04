@@ -1,9 +1,12 @@
+.my-profile-wrapper {
+    min-height: 400px;
+}
+
 .my-profile-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 70px;
-    min-height: 400px;
 }
 
 .my-profile {
