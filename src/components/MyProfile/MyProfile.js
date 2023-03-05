@@ -1,26 +1,36 @@
 import { AuthContext } from "../../context/AuthenticationContext";
 import { UserDataContext } from "../../context/UserDataContext";
-import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link ,useNavigate} from "react-router-dom";
 import { useUserFetch } from "../../hooks/useUserFetch";
 import { delUser } from "../../services/userServices";
 import Loading from "../Loading/Loading";
 import Logo from "../Logo/Logo";
 import LoginToAccess from "../LoginToAccess/LoginToAccess";
-import style from "./MyProfile.module.css"
+import Modal from "../Modal/Modal";
+
+import style from "./MyProfile.module.css";
 
 const MyProfile = () => {
     const { user, logoutData, isAuthenticated } = useContext(AuthContext);
     const [userData, isLoaded] = useUserFetch(user.objectId);
     const { setUserInfo } = useContext(UserDataContext);
+    const [openModal, setOpenModal] = useState(false);
+    const navigate = useNavigate();
+
     useEffect(() => {
         setUserInfo(userData);
     }, [userData]);
 
     const deleteHandler = function () {
-        alert("Are you sure that you want to delete your profile ?");
-        delUser(user.objectId, user.sessionToken);
-        logoutData();
+        setOpenModal(false);
+            delUser(user.objectId, user.sessionToken);
+            logoutData(); 
+            navigate("/");  
+    }
+
+    const showModal = function (){
+        setOpenModal(true);
     }
 
 
@@ -59,8 +69,13 @@ const MyProfile = () => {
                                 <article className={style["my-profile-data-btns"]}>
                                     <Link className={style["my-profile-btn"]} to="/my-orders"> My Orders</Link>
                                     <Link className={style["my-profile-btn"]} to="/update-profile"> Update Profile</Link>
-                                    <Link className={style["my-profile-btn"]} onClick={deleteHandler} to="/"> Delete Profile</Link>
+                                    <Link className={style["my-profile-btn"]} onClick={showModal}> Delete Profile</Link>
                                 </article>
+                                <Modal
+                                    open={openModal}
+                                    onClose={() => setOpenModal(false)}
+                                    onDelete={() => deleteHandler() }
+                                />
                             </section>
                             : <LoginToAccess />
                     }

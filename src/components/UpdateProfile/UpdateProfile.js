@@ -3,14 +3,15 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { update } from "../../services/userServices";
-import style from "./UpdateProfile.module.css"
 import { UserDataContext } from "../../context/UserDataContext";
+import style from "./UpdateProfile.module.css"
+import Loading from "../Loading/Loading";
 
 const UpdateProfile = () => {
-    const { user } = useContext(AuthContext);
+    const { user, isAuthenticated } = useContext(AuthContext);
     const { userData } = useContext(UserDataContext);
     const navigation = useNavigate();
-    
+
     const validate = values => {
         const errors = {};
         if (!values.username) {
@@ -65,74 +66,79 @@ const UpdateProfile = () => {
 
     return (
         <section className={style["update-section"]}>
-            <form className={style["update-form"]} onSubmit={formik.handleSubmit}>
-                <label className={style["update-form-label"]} htmlFor="username"> Username:</label>
-                <input className={style["update-form-input"]}
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="john.sillver"
-                    value={formik.values.username}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                />
-                {
-                    formik.touched.username && formik.errors.username
-                        ? <div className={style["update-error"]}>{formik.errors.username}</div>
-                        : null
-                }
+            {
+                isAuthenticated
+                    ? <form className={style["update-form"]} onSubmit={formik.handleSubmit}>
+                        <label className={style["update-form-label"]} htmlFor="username"> Username:</label>
+                        <input className={style["update-form-input"]}
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="john.sillver"
+                            value={formik.values.username}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {
+                            formik.touched.username && formik.errors.username
+                                ? <div className={style["update-error"]}>{formik.errors.username}</div>
+                                : null
+                        }
 
-                <label className={style["update-form-label"]} htmlFor="fullName"> Full Name:</label>
-                <input className={style["update-form-input"]}
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    placeholder="John Silver"
-                    value={formik.values.fullName}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                />
-                {
-                    formik.touched.fullName && formik.errors.fullName
-                        ? <div className={style["update-error"]}>{formik.errors.fullName}</div>
-                        : null
-                }
+                        <label className={style["update-form-label"]} htmlFor="fullName"> Full Name:</label>
+                        <input className={style["update-form-input"]}
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="John Silver"
+                            value={formik.values.fullName}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {
+                            formik.touched.fullName && formik.errors.fullName
+                                ? <div className={style["update-error"]}>{formik.errors.fullName}</div>
+                                : null
+                        }
 
-                <label className={style["update-form-label"]} htmlFor="address"> Address:</label>
-                <input className={style["update-form-input"]}
-                    type="text"
-                    id="address"
-                    name="address"
-                    placeholder="777 Street New York,NY,USA"
-                    value={formik.values.address}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                />
-                {
-                    formik.touched.address && formik.errors.address
-                        ? <div className={style["update-error"]}>{formik.errors.address}</div>
-                        : null
-                }
-                <label className={style["update-form-label"]} htmlFor="phone"> Phone:</label>
-                <input className={style["update-form-input"]}
-                    type="phone"
-                    id="phone"
-                    name="phone"
-                    placeholder="0887888777"
-                    value={formik.values.phone}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                />
-                {
-                    formik.touched.phone && formik.errors.phone
-                        ? <div className={style["update-error"]}>{formik.errors.phone}</div>
-                        : null
-                }
-                <div className={style["btns-wrapper"]}>
-                    <Link className={style["update-btn"]} to="/my-profile"> Cancel</Link>
-                    <input className={style["update-btn"]} type="submit" value={"Update"} />
-                </div>
-            </form>
+                        <label className={style["update-form-label"]} htmlFor="address"> Address:</label>
+                        <input className={style["update-form-input"]}
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="777 Street New York,NY,USA"
+                            value={formik.values.address}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {
+                            formik.touched.address && formik.errors.address
+                                ? <div className={style["update-error"]}>{formik.errors.address}</div>
+                                : null
+                        }
+                        <label className={style["update-form-label"]} htmlFor="phone"> Phone:</label>
+                        <input className={style["update-form-input"]}
+                            type="phone"
+                            id="phone"
+                            name="phone"
+                            placeholder="0887888777"
+                            value={formik.values.phone}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {
+                            formik.touched.phone && formik.errors.phone
+                                ? <div className={style["update-error"]}>{formik.errors.phone}</div>
+                                : null
+                        }
+                        <div className={style["btns-wrapper"]}>
+                            <Link className={style["update-btn"]} to="/my-profile"> Cancel</Link>
+                            <input className={style["update-btn"]} type="submit" value={"Update"} />
+                        </div>
+                    </form>
+                    : <Loading />
+            }
+
         </section>
     );
 }

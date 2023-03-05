@@ -4,8 +4,7 @@ import Loading from "../Loading/Loading.js";
 import style from "../Home/Home.module.css"
 
 const Home = () => {
-    const [services, isLoaded] = useClassesFetch("services", "GET")
-
+    const [services, isLoaded] = useClassesFetch("services", "GET");
     return (
         <section className={style["home-wrapper"]}>
             <article className={style["our-moto"]}>
