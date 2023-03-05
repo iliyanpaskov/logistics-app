@@ -1,6 +1,7 @@
 import { AuthenticationState } from "./context/AuthenticationContext";
 import { UserDataState } from "./context/UserDataContext";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify'
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -37,6 +38,18 @@ function App() {
                             <Route path="/my-orders" element={<MyOrders />} />
                             <Route path="/update-profile" element={<UpdateProfile />} />
                         </Routes>
+                        <ToastContainer
+                            position="top-center"
+                            autoClose={2500}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                        />
                     </main>
                     <Footer />
                 </div>

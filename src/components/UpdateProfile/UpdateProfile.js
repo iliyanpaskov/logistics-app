@@ -59,7 +59,6 @@ const UpdateProfile = () => {
                 });
             }
             updateSubmit();
-            alert(JSON.stringify(values, null, 2));
             navigation('/my-profile');
         }
     })

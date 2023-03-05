@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// import { errorNotification } from "../services/notificationServices";
 
 export function useUserFetch(userId) {
     const [state, setState] = useState([]);
@@ -22,6 +23,7 @@ export function useUserFetch(userId) {
                 }
             })
             .catch(error => {
+                // errorNotification(error.code)
                 throw error
             })
 

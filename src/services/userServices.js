@@ -1,3 +1,5 @@
+import { errorNotification, successNotification } from "./notificationServices";
+
 const signUpUrl = process.env.REACT_APP_SIGN_UP_URL;
 
 export async function login(url) {
@@ -12,9 +14,14 @@ export async function login(url) {
             }
         });
         const data = await response.json();
-        return data;
+        if (!data.error) {
+            successNotification(`Welcome, ${data.username}`);
+            return data;
+        } else {
+            throw data.error
+        }
     } catch (error) {
-        throw error
+        errorNotification(error);
     }
 }
 
@@ -30,10 +37,15 @@ export async function signUp(values) {
             },
             body: JSON.stringify(values)
         });
-        let data = response.json();
-        return data;
+        const data = await response.json();
+        if (!data.error) {
+            successNotification(`Successfully registered !`);
+            return data;
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        throw error;
+        errorNotification(error);
     }
 }
 
@@ -49,26 +61,36 @@ export async function update(id, token, values) {
             },
             body: JSON.stringify(values)
         })
-        let data = response.json();
-        return data;
+        const data = await response.json();
+        if(!data.error){
+            successNotification('Your profile has been updated successfully!');
+            return data;
+        }else {
+            throw data.error;
+        }
     } catch (error) {
-        throw error;
+        errorNotification(error);
     }
 }
 
-export async function delUser (id, token) {
+export async function delUser(id, token) {
     try {
-        let response = await fetch (`${process.env.REACT_APP_SIGN_UP_URL}/${id}`,{
-            method:"DELETE",
-            headers:{
+        let response = await fetch(`${process.env.REACT_APP_SIGN_UP_URL}/${id}`, {
+            method: "DELETE",
+            headers: {
                 "X-Parse-Application-Id": "mmiJjV5bLwaTJXMktq7zHjB637Ml1maDGfmdTiuZ",
                 "X-Parse-REST-API-Key": "rlKrIGD7HJ5bJOJ5KPOlObKogSzKz5J2EU7z3nZe",
                 "X-Parse-Session-Token": `${token}`
             }
         })
-        let data = response.json();
-        return data;
+        const data = await response.json();
+        if(!data.error){
+            successNotification('Your profile was deleted !');
+            return data;
+        } else {
+            throw data.error;
+        }
     } catch (error) {
-        throw error;
+        errorNotification(error);
     }
 } 
