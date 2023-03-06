@@ -7,7 +7,7 @@ import Logo from '../Logo/Logo';
 import style from "./Header.module.css"
 
 const Header = () => {
-    const { logoutData, isAuthenticated } = useContext(AuthContext);
+    const { user, logoutData, isAuthenticated } = useContext(AuthContext);
     const { clearUserInfo } = useContext(UserDataContext);
     const navigation = useNavigate();
     const userLogout = () => {
@@ -81,7 +81,11 @@ const Header = () => {
             <section className={style["header-img-wrapper"]}>
                 <article className={style["header-img-text-wrapper"]}>
                     <p className={style["header-img-wrapper-name"]}>Safe & Fast</p>
-                    <p className={style["header-img-wrapper-text"]}>Logistics Services</p>
+                    {
+                        isAuthenticated
+                            ? <p className={style["header-img-wrapper-text"]}>{`Welcome ${user.username}`}</p>
+                            : <p className={style["header-img-wrapper-text"]}>Logistics Services</p>
+                    }
                 </article>
             </section>
         </header>

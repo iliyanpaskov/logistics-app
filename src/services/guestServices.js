@@ -1,3 +1,5 @@
+import { errorNotification, successNotification } from "./notificationServices";
+
 const baseUrl = `${process.env.REACT_APP_CLASSES_URL}`;
 
 const getSettings = {
@@ -11,10 +13,14 @@ const getSettings = {
 export async function getOne(className,objectId) {
     try {
         const res = await fetch(`${baseUrl}/${className}/${objectId}`, getSettings);
-        const result = await res.json();
-        return result;
+        const data = await res.json();
+        if(!data.error){
+            return data;
+        }else {
+            throw data.error;
+        }
     } catch (error) {
-        throw error;
+        errorNotification(error);
     }
 }
 
@@ -30,13 +36,14 @@ export async function sendMessage(values) {
             body: JSON.stringify(values)
         });
         const data = await res.json();
-        if (res.status === 201) {
+        if (!data.error) {
+            successNotification('Your message was sent successfully! We will contact you shortly !')
             return data;
         } else {
-            throw data.message;
+            throw data.error;
         }
     } catch (error) {
-        throw error;
+        errorNotification(error);
     }
 }
 
