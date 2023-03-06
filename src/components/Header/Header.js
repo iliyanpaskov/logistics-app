@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 import style from "./Header.module.css"
+import { successNotification } from '../../services/notificationServices';
 
 const Header = () => {
     const { user, logoutData, isAuthenticated } = useContext(AuthContext);
@@ -14,6 +15,7 @@ const Header = () => {
         logoutData();
         clearUserInfo();
         localStorage.clear();
+        successNotification('Logout successful !');
         navigation("/");
     }
 
