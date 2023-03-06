@@ -7,11 +7,10 @@ export const UserDataState = ({ children }) => {
         username: null,
         email: null,
         password: null,
-        confirmPassword: null,
         fullName: null,
         address: null,
         phone: null,
-        myOrders: {},
+        myOrders: [],
     });
 
     const setUserInfo = (data) => {
@@ -22,11 +21,10 @@ export const UserDataState = ({ children }) => {
         setUserData({
             username: null,
             email: null,
-            confirmPassword: null,
             fullName: null,
             address: null,
             phone: null,
-            myOrders: {},
+            myOrders: [],
         });
     }
 

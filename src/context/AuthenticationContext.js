@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AuthContext = createContext();
 
 export const AuthenticationState = ({children}) => {
 
-    const [user, setUser] = useState({
+    const [user, setUser] = useLocalStorage('authenticated',{
         objectId: null,
         username: null,
         sessionToken: null,
@@ -20,8 +21,7 @@ export const AuthenticationState = ({children}) => {
             objectId: null,
             username: null,
             sessionToken: null,
-    
-        })
+        });
     }
 
     return (

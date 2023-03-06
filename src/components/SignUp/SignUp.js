@@ -77,7 +77,6 @@ const SignUp = () => {
                     username: values.username,
                     email: values.email,
                     password: values.password,
-                    confirmPassword: values.confirmPassword,
                     fullName: values.fullName,
                     address: values.address,
                     phone: values.phone,
@@ -93,7 +92,6 @@ const SignUp = () => {
                 setUserInfo({
                     username: values.username,
                     email: values.email,
-                    confirmPassword: values.confirmPassword,
                     fullName: values.fullName,
                     address: values.address,
                     phone: values.phone,

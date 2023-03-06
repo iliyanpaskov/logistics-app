@@ -10,5 +10,5 @@ export function updateLoginUrl(key, value,secondKey,secondValue) {
 
 export function idGenerator() {
     const id = Math.random().toString().split('').slice(2,8).join('');
-    return id
+    return id;
 }

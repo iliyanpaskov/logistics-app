@@ -13,6 +13,7 @@ const Header = () => {
     const userLogout = () => {
         logoutData();
         clearUserInfo();
+        localStorage.clear();
         navigation("/");
     }
 
