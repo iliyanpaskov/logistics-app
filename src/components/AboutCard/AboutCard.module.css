@@ -10,3 +10,15 @@
 .about-team-member-img img {
     width: 100%;
 }
+
+@media all and (max-width:800px){
+    .about-team-member {
+        width: 170px;
+    }
+}
+
+@media all and (max-width:480px){
+    .about-team-member {
+        width: 290px;
+    }
+}

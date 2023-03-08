@@ -20,9 +20,7 @@ const Home = () => {
                         asperiores voluptas. Quaerat quasi eius vitae maxime quia! Ad beatae
                         praesentium similique dolore molestias, ab fuga unde suscipit sunt tempore
                         quia quisquam eum tenetur numquam doloremque repudiandae quis nulla fugiat
-                        harum dignissimos optio iste. Ullam ab magni, sapiente possimus debitis quia?
-                        Accusamus illo cum beatae ipsam velit voluptatum assumenda repellendus
-                        fugiat perspiciatis.
+                        harum dignissimos optio iste. Ullam ab magni, sapiente possim!
                     </p>
                 </section>
             </article>

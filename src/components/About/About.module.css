@@ -92,14 +92,15 @@
     font-weight: 600;
 }
 
-.about-team {position: relative;
+.about-team {
+    position: relative;
     min-height: 300px;
     border-top: 2px solid #F2F2F4;
     width: 100%;
     padding: 30px;
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .about-team-title {
@@ -108,3 +109,57 @@
     margin: 100px 0 50px 0;
 }
 
+@media all and (max-width:1500px) {
+    .about-team {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+
+@media all and (max-width:1200px) {
+    .about-team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width:800px) {
+    .about-logistic {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-wrapper {
+        padding: 20px 0;
+        justify-items: center;
+    }
+
+    .about-team {
+        gap: 0rem;
+    }
+
+    .about-team-title {
+        font-size: 28px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .about-team {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    .about-title,
+    .about-title-two {
+        font-size: 25px;
+    }
+
+    .about-logistic-content-title{
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .about-logistic-content-text{
+        font-size: 15px;
+        text-align: center;
+        padding: 5px;
+    }
+}

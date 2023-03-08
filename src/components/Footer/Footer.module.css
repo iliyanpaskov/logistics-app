@@ -73,3 +73,32 @@
 .footer-bottom-text span{
     color: #FF4800;
 }
+
+@media all and (max-width:1024px){
+    .footer-list-sf{
+        display: none;
+    }
+}
+
+@media all and (max-width:800px){
+    .footer-lists-wrapper{
+        justify-content: space-around;
+    }
+
+    .footer-list {
+      padding: 2px;
+    }
+
+    .footer-list-title{
+        font-size: 20px;
+    }
+  
+    .footer-list-item-text{
+        font-size: 13px;
+    }
+
+    .footer-list-item-social-medias i {
+        font-size: 15px;
+        padding: 8px;
+    }
+}

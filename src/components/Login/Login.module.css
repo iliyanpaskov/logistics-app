@@ -49,3 +49,39 @@
     margin: 10px;
     font-size: 14px;
 }
+
+@media all and (max-width:1200px) {
+    .login-section{
+        width: 60%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .login-form {
+        padding: 20px 50px;
+    }
+}
+
+@media all and (max-width:800px) {
+    .login-section{
+        width: 80%;
+    }
+    .login-form {
+        padding: 10px 40px;
+    }
+
+    .login-btn{
+        font-weight: 600;
+        width: 33%;
+    }
+}
+
+@media all and (max-width:480px) {
+    .login-section{
+        width: 92%;
+    }
+
+    .login-form-label{
+        font-size: 20px;
+    }
+}

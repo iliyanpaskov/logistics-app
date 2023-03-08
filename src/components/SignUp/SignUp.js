@@ -100,7 +100,6 @@ const SignUp = () => {
 
             }
             signUpSubmit();
-            // alert(JSON.stringify(values, null, 2));
             navigation('/')
         }
     })

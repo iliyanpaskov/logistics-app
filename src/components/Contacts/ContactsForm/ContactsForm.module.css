@@ -52,3 +52,40 @@
     font-weight: 700;
     text-align: center;
 }
+
+@media all and (max-width:1200px) {
+    .contacts-form {
+        padding: 20px 60px;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .contacts-form-btn {
+        width: 80%;
+    }
+}
+
+@media all and (max-width:800px) {
+    .contacts-form {
+        padding: 20px 50px;
+    }
+
+    .form-input{
+        width: 100%;
+    }
+
+    .contacts-form-btn {
+        width: 70%;
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .contacts-form {
+        padding: 20px 10px;
+    }
+
+    .contacts-form-btn {
+        width: 60%;
+    }
+}

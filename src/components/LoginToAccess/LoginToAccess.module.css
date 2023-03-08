@@ -13,3 +13,13 @@
     text-transform: capitalize;
     font-weight: 600;
 }
+
+@media all and (max-width:480px) {
+    .access-btn{
+    font-size: 20px;
+    font-weight: 800;
+    }
+    .access-btn-wrapper{
+        padding: 20px;
+    }
+}

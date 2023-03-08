@@ -49,3 +49,40 @@
     margin: 10px;
     font-size: 14px;
 }
+
+
+@media all and (max-width:1200px) {
+    .signup-section{
+        width: 60%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .signup-form{
+        padding: 20px 50px;
+    }
+}
+
+@media all and (max-width:800px) {
+    .signup-section{
+        width: 80%;
+    }
+    .signup-form {
+        padding: 10px 40px;
+    }
+
+    .sign-up-btn{
+        font-weight: 600;
+        width: 33%;
+    }
+}
+
+@media all and (max-width:480px) {
+    .signup-section{
+        width: 92%;
+    }
+
+    .sign-up-form-label{
+        font-size: 20px;
+    }
+}

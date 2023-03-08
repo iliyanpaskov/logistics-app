@@ -12,9 +12,14 @@
 .orders-list {
     list-style: none;
     padding: 0;
-    width: 85%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
+@media all and (max-width:1200px) {
+    .orders-list {
+        width: 100%;
+    }
+}

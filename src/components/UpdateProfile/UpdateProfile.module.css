@@ -3,7 +3,7 @@
     width: 40%;
     background: #F2F2F4;
     box-shadow: 0px 0px 5px 3px lightgray;
-    min-height:400px ;
+    min-height: 400px;
 }
 
 .update-form {
@@ -26,7 +26,7 @@
 }
 
 .update-btn {
-    margin: 30px auto 0 auto;
+    margin: 30px 10px;
     padding: 10px;
     width: 200px;
     text-transform: capitalize;
@@ -56,4 +56,35 @@
 .btns-wrapper {
     display: flex;
     justify-content: space-around;
+}
+
+@media all and (max-width:1200px) {
+    .update-section {
+        width: 60%;
+    }
+
+    .update-form {
+        padding: 30px 50px;
+    }
+}
+
+
+@media all and (max-width:800px) {
+    .update-section {
+        width: 80%;
+    }
+
+    .update-form-label {
+        font-size: 21px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .update-section {
+        width: 95%;
+    }
+
+    .update-btn {
+        font-weight: 400;
+    }
 }

@@ -58,3 +58,52 @@
 .details-benefits-list-item {
     margin: 15px;
 }
+
+@media all and (max-width:1200px) {
+    .details-wrapper {
+        width: 97%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .details-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details-content-img {
+        width: 80%;
+    }
+
+    .details-content-text {
+        width: 90%;
+    }
+}
+
+@media all and (max-width:800px) {
+    .details-title{
+        font-size: 35px;
+    }
+
+    .details-content-text{
+        font-size: 14px;
+    }
+
+    .details-benefits-list-item {
+        font-size: 18px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .details-title{
+        font-size: 29px;
+    }
+
+    .details-content-text{
+        font-size: 13px;
+    }
+
+    .details-benefits-list-item {
+        font-size: 16px;
+    }
+}

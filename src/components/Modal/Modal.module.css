@@ -58,3 +58,36 @@
 .modal-btn-delete {
     background: red;
 }
+
+@media all and (max-width:800px) {
+    .modal{
+        width: 80%;
+        padding: 30px;
+    }
+
+    .modal-content{
+        font-size:20px ;
+    }
+
+    .modal-btn{
+        font-size:15px ;
+        padding: 10px 20px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .modal{
+        width: 95%;
+        padding: 30px;
+    }
+
+    .modal-content{
+        font-size:17px ;
+    }
+
+    .modal-btn{
+        font-size:14px ;
+        padding: 10px 15px;
+        margin: 8px;
+    }
+}

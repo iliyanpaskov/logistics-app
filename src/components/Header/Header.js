@@ -55,30 +55,32 @@ const Header = () => {
         <header className={style["header-wrapper"]}>
             <section className={style["header-navigation-wrapper"]}>
                 <Logo />
-                <nav className={style["header-navigation"]}>
-                    <ul className={style["header-navigation-list"]}>
-                        <li className={style["header-navigation-list-item"]}>
-                            <Link to="/" >Home</Link>
-                        </li>
-                        <li className={style["header-navigation-list-item"]}>
-                            <Link to="/about" >About</Link>
-                        </li>
-                        <li className={style["header-navigation-list-item"]}>
-                            <Link to="/services" >Services & Price</Link>
-                        </li>
-                        <li className={style["header-navigation-list-item"]}>
-                            <Link to="/contacts" >Contacts</Link>
-                        </li>
-                    </ul>
-                </nav>
+                <div className={style["navigation-wrapper"]}>
+                    <nav className={style["header-navigation"]}>
+                        <ul className={style["header-navigation-list"]}>
+                            <li className={style["header-navigation-list-item"]}>
+                                <Link to="/" >Home</Link>
+                            </li>
+                            <li className={style["header-navigation-list-item"]}>
+                                <Link to="/about" >About</Link>
+                            </li>
+                            <li className={style["header-navigation-list-item"]}>
+                                <Link to="/services" >Services & Price</Link>
+                            </li>
+                            <li className={style["header-navigation-list-item"]}>
+                                <Link to="/contacts" >Contacts</Link>
+                            </li>
+                        </ul>
+                    </nav>
 
-                <article className={style["header-navigation-user"]}>
-                    {
-                        isAuthenticated
-                            ? <UserNavigationLinks />
-                            : <GuestNavigationLinks />
-                    }
-                </article>
+                    <article className={style["header-navigation-user"]}>
+                        {
+                            isAuthenticated
+                                ? <UserNavigationLinks />
+                                : <GuestNavigationLinks />
+                        }
+                    </article>
+                </div>
             </section>
 
             <section className={style["header-img-wrapper"]}>

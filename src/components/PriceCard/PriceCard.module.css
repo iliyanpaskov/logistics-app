@@ -2,7 +2,6 @@
     background: #F2F2F4;
     text-align: center;
     width: 400px;
-    margin: 10px;
     text-transform: capitalize;
 }
 
@@ -56,4 +55,46 @@
 
 .price-card-btn:hover {
     background: #FF4800;
+}
+
+@media all and (max-width:1366px) {
+    .price-card {
+        width: 300px;
+    }
+}
+
+@media all and (max-width:1200px) {
+    .price-card {
+        width: 190px;
+    }
+
+    .price {
+        font-size: 27px;
+    }
+
+    .price-period {
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width:800px) {
+    .price {
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .price-card-service {
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .price-period {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .price-clients{
+        padding: 5px;
+        font-size: 15px;
+    }
 }

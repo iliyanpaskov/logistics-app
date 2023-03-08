@@ -66,3 +66,36 @@
     background: greenyellow;
     color: black;
 }
+
+@media all and (max-width:1200px) {
+   .orders-list-item {
+    margin: 10px;
+   }
+}
+
+@media all and (max-width:800px) {
+    .orders-list-item {
+        width: 270px;
+     padding: 10px;
+    }
+
+    .orders-list-item-status-title{
+        font-size: 19px;
+    }
+
+    .orders-list-item-status-content{
+        font-size: 17px;
+    }
+
+    .orders-list-item-info-title{
+        font-size: 19px;
+    }
+
+    .orders-list-item-info-content{
+        font-size: 14px;
+    }
+
+    .orders-list-item-info-btn{
+        font-size: 15px;
+    }
+ }

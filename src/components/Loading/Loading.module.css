@@ -21,3 +21,11 @@
     animation: spin 1.5s linear infinite;
     align-self: center;
 }
+
+@media all and (max-width:480px) {
+    .loader {
+        margin-left: -75px;
+        width: 150px;
+        height: 150px;
+    }
+}
