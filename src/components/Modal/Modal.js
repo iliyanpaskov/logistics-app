@@ -1,5 +1,5 @@
 
-import Logo from "../Logo/Logo"
+import Logo from "../common/Logo/Logo"
 import style from "./Modal.module.css"
 
 const Modal = ({ open, onClose, onDelete }) => {

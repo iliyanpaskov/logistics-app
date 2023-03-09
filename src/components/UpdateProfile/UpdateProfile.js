@@ -7,7 +7,7 @@ import { UserDataContext } from "../../context/UserDataContext";
 import style from "./UpdateProfile.module.css"
 
 const UpdateProfile = () => {
-    const { user, isAuthenticated } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const { userData } = useContext(UserDataContext);
     const navigation = useNavigate();
 

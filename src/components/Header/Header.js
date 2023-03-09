@@ -2,7 +2,7 @@ import { AuthContext } from '../../context/AuthenticationContext';
 import { UserDataContext } from '../../context/UserDataContext';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../Logo/Logo';
+import Logo from '../common/Logo/Logo';
 
 import style from "./Header.module.css"
 import { successNotification } from '../../services/notificationServices';

@@ -4,7 +4,7 @@ import { UserDataContext } from "../../context/UserDataContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { update } from "../../services/userServices.js"
-import Logo from "../Logo/Logo";
+import Logo from "../common/Logo/Logo";
 import style from "./MakeAnOrder.module.css";
 
 const MakeAnOrder = () => {

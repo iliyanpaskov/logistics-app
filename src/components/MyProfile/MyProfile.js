@@ -5,13 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserFetch } from "../../hooks/useUserFetch";
 import { delUser } from "../../services/userServices";
 import Loading from "../common/Loading/Loading";
-import Logo from "../Logo/Logo";
+import Logo from "../common/Logo/Logo";
 import Modal from "../Modal/Modal";
 
 import style from "./MyProfile.module.css";
 
 const MyProfile = () => {
-    const { user, logoutData, isAuthenticated } = useContext(AuthContext);
+    const { user, logoutData } = useContext(AuthContext);
     const [userData, isLoaded] = useUserFetch(user.objectId);
     const { setUserInfo } = useContext(UserDataContext);
     const [openModal, setOpenModal] = useState(false);

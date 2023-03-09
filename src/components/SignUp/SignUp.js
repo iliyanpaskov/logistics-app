@@ -106,6 +106,7 @@ const SignUp = () => {
 
     return (
         <section className={style["signup-section"]}>
+            <h1 className={style["signup-section-title"]}>sign up:</h1>
             <form className={style["signup-form"]} onSubmit={formik.handleSubmit}>
                 <label className={style["sign-up-form-label"]} htmlFor="username"> Username:</label>
                 <input className={style["sign-up-form-input"]}

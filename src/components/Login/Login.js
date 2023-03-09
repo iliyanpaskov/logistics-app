@@ -53,6 +53,7 @@ const Login = () => {
 
     return (
         <section className={style["login-section"]}>
+            <h1 className={style["login-section-title"]}>login:</h1>
             <form className={style["login-form"]} onSubmit={formik.handleSubmit}>
                 <label className={style["login-form-label"]} htmlFor="username"> Username:</label>
                 <input className={style["login-form-input"]}
