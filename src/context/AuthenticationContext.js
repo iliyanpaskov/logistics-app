@@ -3,7 +3,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AuthContext = createContext();
 
-export const AuthenticationState = ({children}) => {
+export const AuthenticationProvider = ({children}) => {
 
     const [user, setUser] = useLocalStorage('authenticated',{
         objectId: null,

@@ -1,6 +1,6 @@
 import { useClassesFetch } from "../../hooks/useClassesFetch.js";
 import HomeServiceCard from "../HomeServiceCard/HomeServiceCard.js";
-import Loading from "../Loading/Loading.js";
+import Loading from "../common/Loading/Loading.js";
 import style from "../Home/Home.module.css"
 
 const Home = () => {

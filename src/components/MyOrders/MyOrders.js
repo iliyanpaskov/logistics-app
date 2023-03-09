@@ -3,21 +3,20 @@ import { useContext } from "react";
 import { useUserFetch } from "../../hooks/useUserFetch";
 import style from "./MyOrders.module.css";
 import MyOrdersCard from "../MyOrdersCard/MyOrdersCard";
-import Loading from "../Loading/Loading";
+import Loading from "../common/Loading/Loading";
 import MakeAnOrder from "../MakeAnOrder/MakeAnOrder";
 
 const MyOrders = () => {
-    const { user, isAuthenticated } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [state, isLoaded, hasOrders] = useUserFetch(user.objectId);
 
     return (
         <section className={style["orders-section"]}>
-            {isLoaded && isAuthenticated
+            {isLoaded 
                 ? <article className={style["orders-list-wrapper"]}>
                     {hasOrders
                         ? <>
                             <ul className={style["orders-list"]}>
-                                {console.log(state.myOrders)}
                                 {state.myOrders.map(x => <MyOrdersCard key={x.orderId} order={x} />)}
                             </ul>
                             <MakeAnOrder />

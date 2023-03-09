@@ -2,7 +2,7 @@ import { useClassesFetch } from "../../hooks/useClassesFetch";
 import { idGenerator } from "../../services/utils";
 import ServicesCard from "../ServicesCard/ServicesCard";
 import PriceCard from "../PriceCard/PriceCard";
-import Loading from "../Loading/Loading";
+import Loading from "../common/Loading/Loading";
 import style from "./Services.module.css"
 
 const Services = () => {

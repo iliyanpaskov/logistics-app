@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getOne } from "../../services/guestServices";
-import Loading from "../Loading/Loading";
+import Loading from "../common/Loading/Loading";
 import Logo from "../Logo/Logo";
 import style from "./ServiceDetails.module.css";
 
