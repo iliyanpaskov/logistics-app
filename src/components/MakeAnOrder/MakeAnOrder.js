@@ -39,18 +39,18 @@ const MakeAnOrder = () => {
         validate,
         onSubmit: values => {
             const newOrderSubmit = async () => {
-                let newOrder ={
+                let newOrder = {
                     orderId: values.orderId,
                     information: values.information,
                     service: values.service,
                     status: 'Pending...',
                 }
-                
-                let response = await update(user.objectId, user.sessionToken, {
+
+                await update(user.objectId, user.sessionToken, {
                     myOrders: [
                         ...userData.myOrders,
                         newOrder
-                ]
+                    ]
                 });
             }
             newOrderSubmit(); alert(JSON.stringify(values, null, 2));

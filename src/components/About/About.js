@@ -3,10 +3,16 @@ import { useClassesFetch } from "../../hooks/useClassesFetch.js";
 import Loading from "../common/Loading/Loading.js";
 import AboutCard from "../AboutCard/AboutCard.js";
 import style from "./About.module.css"
+import ModalVideo from "../ModalVideo/ModalVideo.js";
+import { useState } from "react";
 
 const About = () => {
+    const [openModal, setOpenModal] =useState(false);
+    const [team, isLoaded] = useClassesFetch('team', 'GET');
 
-    const [team, isLoaded] = useClassesFetch('team', 'GET')
+    const showModal = function() {
+        setOpenModal(true)
+    }
 
     return (
         <section className={style["about-wrapper"]}>
@@ -29,7 +35,7 @@ const About = () => {
                         consectetur adipisicing elit. Debitis ad excepturi corrupti temporibus.
                         Et in laborum natus aut facere sequi!
                     </p>
-                    <Link to={"#"} className={style["play-btn"]}>
+                    <Link className={style["play-btn"]} onClick={showModal}>
                         <i className="fa-solid fa-play"></i>
                         {/* youbube video  "https://www.youtube.com/watch?v=C4jjFanHZo8"*/}
                         <p className={style["play-btn-text"]}>Play video</p>
@@ -41,10 +47,14 @@ const About = () => {
             <section className={style["about-team"]}>
                 {
                     isLoaded
-                        ? team[0].map(x => <AboutCard key={x.objectId} person={x} />)
-                        : <Loading />
+                    ? team[0].map(x => <AboutCard key={x.objectId} person={x} />)
+                    : <Loading />
                 }
             </section>
+                <ModalVideo
+                    open={openModal}
+                    onClose={() => setOpenModal(false)}
+                />
         </section>
     );
 }

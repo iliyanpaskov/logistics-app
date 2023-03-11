@@ -50,7 +50,7 @@ const UpdateProfile = () => {
         validate,
         onSubmit: values => {
             const updateSubmit = async () => {
-                let response = await update(user.objectId, user.sessionToken, {
+                await update(user.objectId, user.sessionToken, {
                     username: values.username,
                     fullName: values.fullName,
                     address: values.address,
