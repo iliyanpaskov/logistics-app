@@ -4,6 +4,7 @@ import { UserDataContext } from "../../context/UserDataContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { update } from "../../services/userServices.js"
+import { successNotification } from "../../services/notificationServices";
 import Logo from "../common/Logo/Logo";
 import style from "./MakeAnOrder.module.css";
 
@@ -53,7 +54,8 @@ const MakeAnOrder = () => {
                     ]
                 });
             }
-            newOrderSubmit(); alert(JSON.stringify(values, null, 2));
+            newOrderSubmit();
+            successNotification("Order accepted !");
             navigate('/my-profile');
         }
     })

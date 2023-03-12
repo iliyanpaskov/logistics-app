@@ -14,6 +14,7 @@ const ModalVideo = ({ open, onClose }) => {
                 <div className={style["modal-video"]}>
                     <iframe className={style["video"]} src="https://www.youtube.com/embed/C4jjFanHZo8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div>
+                <button className={style["close-btn"]} onClick={onClose}>close</button>
             </article>
         </section>
     )
